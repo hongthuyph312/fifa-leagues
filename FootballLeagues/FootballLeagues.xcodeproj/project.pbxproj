@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6242DFBB6F6596DE4EE96E6E /* Pods_FootballLeagues.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF87FF5CC445AA72F9A085A5 /* Pods_FootballLeagues.framework */; };
+		731AA825EFE446A6C5F018F6 /* Pods_FootballLeaguesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BD98BC864E8D1DD14C0BC13 /* Pods_FootballLeaguesUITests.framework */; };
 		D2A1503820BDA507006AE6B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A1503720BDA507006AE6B0 /* AppDelegate.swift */; };
 		D2A1503A20BDA507006AE6B0 /* StandingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A1503920BDA507006AE6B0 /* StandingsViewController.swift */; };
 		D2A1503D20BDA507006AE6B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2A1503B20BDA507006AE6B0 /* Main.storyboard */; };
@@ -22,6 +24,10 @@
 		D2A1507520BDB434006AE6B0 /* Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A1506F20BDB434006AE6B0 /* Define.swift */; };
 		D2A1507820BDB8C0006AE6B0 /* ClubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A1507720BDB8C0006AE6B0 /* ClubModel.swift */; };
 		D2A1507C20BDBACB006AE6B0 /* StandingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A1507B20BDBACB006AE6B0 /* StandingsTableViewCell.swift */; };
+		D2F31AC420C1C37B00E88D95 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F31AC320C1C37B00E88D95 /* Common.swift */; };
+		D2F31AC620C1C38600E88D95 /* FirebaseAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F31AC520C1C38500E88D95 /* FirebaseAction.swift */; };
+		D2F31AC820C1C5B700E88D95 /* OriginalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F31AC720C1C5B700E88D95 /* OriginalViewController.swift */; };
+		EE030F74C9E1C6322064F08E /* Pods_FootballLeaguesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8622522649E9C55CA9B89BEF /* Pods_FootballLeaguesTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +48,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0BD98BC864E8D1DD14C0BC13 /* Pods_FootballLeaguesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FootballLeaguesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24F548D9E1C1F943A27A8578 /* Pods-FootballLeaguesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FootballLeaguesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FootballLeaguesUITests/Pods-FootballLeaguesUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		422AA23784627D6FCEF3A15B /* Pods-FootballLeagues.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FootballLeagues.release.xcconfig"; path = "Pods/Target Support Files/Pods-FootballLeagues/Pods-FootballLeagues.release.xcconfig"; sourceTree = "<group>"; };
+		4F7209CC38FB69F7BFDF62FB /* Pods-FootballLeaguesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FootballLeaguesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FootballLeaguesTests/Pods-FootballLeaguesTests.release.xcconfig"; sourceTree = "<group>"; };
+		7C328B1DD94BDAD005239B9C /* Pods-FootballLeaguesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FootballLeaguesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FootballLeaguesUITests/Pods-FootballLeaguesUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8622522649E9C55CA9B89BEF /* Pods_FootballLeaguesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FootballLeaguesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAE5EC63760709C5356949E5 /* Pods-FootballLeagues.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FootballLeagues.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FootballLeagues/Pods-FootballLeagues.debug.xcconfig"; sourceTree = "<group>"; };
 		D2A1503420BDA507006AE6B0 /* FootballLeagues.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootballLeagues.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2A1503720BDA507006AE6B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2A1503920BDA507006AE6B0 /* StandingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +76,11 @@
 		D2A1506F20BDB434006AE6B0 /* Define.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Define.swift; sourceTree = "<group>"; };
 		D2A1507720BDB8C0006AE6B0 /* ClubModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubModel.swift; sourceTree = "<group>"; };
 		D2A1507B20BDBACB006AE6B0 /* StandingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsTableViewCell.swift; sourceTree = "<group>"; };
+		D2F31AC320C1C37B00E88D95 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		D2F31AC520C1C38500E88D95 /* FirebaseAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAction.swift; sourceTree = "<group>"; };
+		D2F31AC720C1C5B700E88D95 /* OriginalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OriginalViewController.swift; sourceTree = "<group>"; };
+		E7747D6A3E28519947E5F262 /* Pods-FootballLeaguesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FootballLeaguesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FootballLeaguesTests/Pods-FootballLeaguesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EF87FF5CC445AA72F9A085A5 /* Pods_FootballLeagues.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FootballLeagues.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6242DFBB6F6596DE4EE96E6E /* Pods_FootballLeagues.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE030F74C9E1C6322064F08E /* Pods_FootballLeaguesTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,12 +104,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				731AA825EFE446A6C5F018F6 /* Pods_FootballLeaguesUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		47BD76840761DE09F353CF19 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CAE5EC63760709C5356949E5 /* Pods-FootballLeagues.debug.xcconfig */,
+				422AA23784627D6FCEF3A15B /* Pods-FootballLeagues.release.xcconfig */,
+				E7747D6A3E28519947E5F262 /* Pods-FootballLeaguesTests.debug.xcconfig */,
+				4F7209CC38FB69F7BFDF62FB /* Pods-FootballLeaguesTests.release.xcconfig */,
+				24F548D9E1C1F943A27A8578 /* Pods-FootballLeaguesUITests.debug.xcconfig */,
+				7C328B1DD94BDAD005239B9C /* Pods-FootballLeaguesUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		51035F47F721A6F1175DA011 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EF87FF5CC445AA72F9A085A5 /* Pods_FootballLeagues.framework */,
+				8622522649E9C55CA9B89BEF /* Pods_FootballLeaguesTests.framework */,
+				0BD98BC864E8D1DD14C0BC13 /* Pods_FootballLeaguesUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D2A1502B20BDA507006AE6B0 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +141,8 @@
 				D2A1504B20BDA507006AE6B0 /* FootballLeaguesTests */,
 				D2A1505620BDA507006AE6B0 /* FootballLeaguesUITests */,
 				D2A1503520BDA507006AE6B0 /* Products */,
+				47BD76840761DE09F353CF19 /* Pods */,
+				51035F47F721A6F1175DA011 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,6 +202,9 @@
 		D2A1506820BDB41A006AE6B0 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D2F31AC720C1C5B700E88D95 /* OriginalViewController.swift */,
+				D2F31AC520C1C38500E88D95 /* FirebaseAction.swift */,
+				D2F31AC320C1C37B00E88D95 /* Common.swift */,
 				D2A1506F20BDB434006AE6B0 /* Define.swift */,
 				D2A1506920BDB434006AE6B0 /* Extension */,
 			);
@@ -196,9 +245,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2A1505C20BDA507006AE6B0 /* Build configuration list for PBXNativeTarget "FootballLeagues" */;
 			buildPhases = (
+				B02093DCFC663F018E9BC792 /* [CP] Check Pods Manifest.lock */,
 				D2A1503020BDA507006AE6B0 /* Sources */,
 				D2A1503120BDA507006AE6B0 /* Frameworks */,
 				D2A1503220BDA507006AE6B0 /* Resources */,
+				EF07D8470F55EEA604B55894 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -213,6 +264,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2A1505F20BDA507006AE6B0 /* Build configuration list for PBXNativeTarget "FootballLeaguesTests" */;
 			buildPhases = (
+				59D352F19D2D79CDD98E2FD9 /* [CP] Check Pods Manifest.lock */,
 				D2A1504420BDA507006AE6B0 /* Sources */,
 				D2A1504520BDA507006AE6B0 /* Frameworks */,
 				D2A1504620BDA507006AE6B0 /* Resources */,
@@ -231,6 +283,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2A1506220BDA507006AE6B0 /* Build configuration list for PBXNativeTarget "FootballLeaguesUITests" */;
 			buildPhases = (
+				D95D09FAA45A2993322DDC0E /* [CP] Check Pods Manifest.lock */,
 				D2A1504F20BDA507006AE6B0 /* Sources */,
 				D2A1505020BDA507006AE6B0 /* Frameworks */,
 				D2A1505120BDA507006AE6B0 /* Resources */,
@@ -318,6 +371,85 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		59D352F19D2D79CDD98E2FD9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FootballLeaguesTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B02093DCFC663F018E9BC792 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FootballLeagues-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D95D09FAA45A2993322DDC0E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FootballLeaguesUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF07D8470F55EEA604B55894 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FootballLeagues/Pods-FootballLeagues-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FootballLeagues/Pods-FootballLeagues-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D2A1503020BDA507006AE6B0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -327,7 +459,10 @@
 				D2A1507120BDB434006AE6B0 /* NSObjectExtension.swift in Sources */,
 				D2A1507220BDB434006AE6B0 /* StringExtension.swift in Sources */,
 				D2A1507020BDB434006AE6B0 /* Mdate.swift in Sources */,
+				D2F31AC420C1C37B00E88D95 /* Common.swift in Sources */,
 				D2A1507820BDB8C0006AE6B0 /* ClubModel.swift in Sources */,
+				D2F31AC620C1C38600E88D95 /* FirebaseAction.swift in Sources */,
+				D2F31AC820C1C5B700E88D95 /* OriginalViewController.swift in Sources */,
 				D2A1507320BDB434006AE6B0 /* UILabelExtension.swift in Sources */,
 				D2A1503A20BDA507006AE6B0 /* StandingsViewController.swift in Sources */,
 				D2A1507C20BDBACB006AE6B0 /* StandingsTableViewCell.swift in Sources */,
@@ -496,6 +631,7 @@
 		};
 		D2A1505D20BDA507006AE6B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CAE5EC63760709C5356949E5 /* Pods-FootballLeagues.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -511,6 +647,7 @@
 		};
 		D2A1505E20BDA507006AE6B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 422AA23784627D6FCEF3A15B /* Pods-FootballLeagues.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -526,6 +663,7 @@
 		};
 		D2A1506020BDA507006AE6B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7747D6A3E28519947E5F262 /* Pods-FootballLeaguesTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -543,6 +681,7 @@
 		};
 		D2A1506120BDA507006AE6B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F7209CC38FB69F7BFDF62FB /* Pods-FootballLeaguesTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -560,6 +699,7 @@
 		};
 		D2A1506320BDA507006AE6B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24F548D9E1C1F943A27A8578 /* Pods-FootballLeaguesUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -576,6 +716,7 @@
 		};
 		D2A1506420BDA507006AE6B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C328B1DD94BDAD005239B9C /* Pods-FootballLeaguesUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

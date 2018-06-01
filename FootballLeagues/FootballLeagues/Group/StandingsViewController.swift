@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StandingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class StandingsViewController: OriginalViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     let cellHeight: CGFloat      = 50.0
