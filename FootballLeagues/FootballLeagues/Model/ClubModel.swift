@@ -29,7 +29,7 @@ class ClubModel: NSObject {
         }
         
         if club["goalDifferent"] != nil {
-            goalDifferents = club["goalDifferent"]!
+            goalDifferent = club["goalDifferent"]!
         }
     }
 }

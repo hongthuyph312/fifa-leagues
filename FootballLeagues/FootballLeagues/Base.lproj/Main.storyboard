@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,6 +14,10 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="StandingsViewController" customModule="FootballLeagues" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aqy-sO-YES"/>
+                        <viewControllerLayoutGuide type="bottom" id="jDz-mg-LYe"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,7 +26,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="StandingsTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StandingsTableViewCell" rowHeight="50" id="Mvj-Vp-eoC" customClass="StandingsTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="StandingsTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StandingsTableViewCell" rowHeight="50" id="Mvj-Vp-eoC" customClass="StandingsTableViewCell" customModule="FootballLeagues" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mvj-Vp-eoC" id="e4i-gv-yB4">
@@ -85,11 +89,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="countryLabel" destination="hzQ-Q8-1pO" id="sny-u5-aB2"/>
-                                            <outlet property="flagImageView" destination="3Vu-E1-mSs" id="Up6-SM-edA"/>
-                                            <outlet property="goalsDifferenceLabel" destination="9EC-wJ-zdu" id="1ZZ-mk-soc"/>
-                                            <outlet property="playedLabel" destination="LQ9-hj-ZXM" id="Wo4-yr-FtD"/>
-                                            <outlet property="pointsLabel" destination="Dsr-cY-KyZ" id="1yy-no-UFC"/>
+                                            <outlet property="countryLabel" destination="hzQ-Q8-1pO" id="bYB-h0-Yds"/>
+                                            <outlet property="flagImageView" destination="3Vu-E1-mSs" id="0ON-gx-wN2"/>
+                                            <outlet property="goalsDifferenceLabel" destination="9EC-wJ-zdu" id="Wbg-qv-tGB"/>
+                                            <outlet property="playedLabel" destination="LQ9-hj-ZXM" id="z1c-zD-4iE"/>
+                                            <outlet property="pointsLabel" destination="Dsr-cY-KyZ" id="9tr-q2-ncg"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -101,12 +105,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="krh-LT-FLm" secondAttribute="trailing" id="H5S-Am-Pqq"/>
-                            <constraint firstItem="krh-LT-FLm" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="HBV-8A-hzE"/>
+                            <constraint firstAttribute="trailing" secondItem="krh-LT-FLm" secondAttribute="trailing" id="H5S-Am-Pqq"/>
+                            <constraint firstItem="krh-LT-FLm" firstAttribute="bottom" secondItem="jDz-mg-LYe" secondAttribute="top" id="HBV-8A-hzE"/>
                             <constraint firstItem="krh-LT-FLm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="IDh-cK-bMP"/>
-                            <constraint firstItem="krh-LT-FLm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PQD-0b-j5w"/>
+                            <constraint firstItem="krh-LT-FLm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="PQD-0b-j5w"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="krh-LT-FLm" id="jJg-IQ-63C"/>
