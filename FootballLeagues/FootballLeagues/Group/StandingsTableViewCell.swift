@@ -25,7 +25,10 @@ class StandingsTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func setupCell() {
-        
+    func setupCell(clubModel: ClubModel) {
+        countryLabel.text = clubModel.name
+        playedLabel.text = "\(clubModel.played)"
+        goalsDifferenceLabel.text = "\(clubModel.goals) - \(clubModel.lost)"
+        pointsLabel.text = "\(clubModel.points)"
     }
 }

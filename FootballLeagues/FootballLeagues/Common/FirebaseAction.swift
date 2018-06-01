@@ -145,7 +145,22 @@ class FirebaseAction: NSObject {
         ref.child("discuss").child("comment").child(threadId).child(commentId).child("like").setValue(newLike)
     }
     
-    //MARK: - DOCTOR COMMENTS
+    //MARK: - Clubs
+    
+    func getClubList(onCompletionHandler: @escaping ([ClubModel]) -> ()) {
+        ref.child("club_list").observe(.value, with: { (snapshot) in
+            let snapDict = snapshot.value as? [String: [String : AnyObject]] ?? [:]
+            var clubArray = [ClubModel]()
+            for clubDict in snapDict {
+                let club = ClubModel()
+                
+                club.initClubModel(club: clubDict.value)
+                clubArray.append(club)
+            }
+            
+            onCompletionHandler(clubArray)
+        })
+    }
     
     func getDoctorComment(doctorId: String, onCompletionHandler: @escaping ([CommentModel]) -> ()) {
         self.getUser(max: 10000, onCompletionHandler: { userDict in
@@ -179,21 +194,6 @@ class FirebaseAction: NSObject {
         let commentDict = ["userName": (UIDevice.current.identifierForVendor?.uuidString)!, "content":comment, "time":serverTimestamp, "like": ""] as [String : Any]
         resultRef.childByAutoId().setValue(commentDict)
         onCompletionHandler()
-    }
-    
-    func getDoctorList(onCompletionHandler: @escaping ([DoctorModel]) -> ()) {
-        ref.child("doctor_list").queryOrdered(byChild: "star").observe(.value, with: { (snapshot) in
-            let snapDict = snapshot.value as? [String: [String : AnyObject]] ?? [:]
-            var doctorArray = [DoctorModel]()
-            for doctorDict in snapDict {
-                let doctor = DoctorModel()
-                
-                doctor.initDoctorModel(doctor: doctorDict.value)
-                doctorArray.append(doctor)
-            }
-            
-            onCompletionHandler(doctorArray.sorted(by: {$0.starPoint > $1.starPoint}))
-        })
     }
     
     func editDoctorCommentLike(doctorId: String, commentId:String, newLike: String) {

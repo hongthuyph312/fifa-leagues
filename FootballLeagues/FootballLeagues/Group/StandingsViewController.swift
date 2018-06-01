@@ -11,20 +11,41 @@ import UIKit
 class StandingsViewController: OriginalViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    let cellHeight: CGFloat      = 50.0
-    let headerHeight: CGFloat    = 50.0
+    var clubArray               = [ClubModel]()
+    let cellHeight: CGFloat     = 50.0
+    let headerHeight: CGFloat   = 50.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupUI()
+        self.getClubList()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    // MARK: - Get data
+    
+    func setupUI() {
+        tableView.tableFooterView = UIView.init(frame: CGRect.zero)
+        
+    }
+    
+    // MARK: - Get data
+    
+    func getClubList() {
+        self.showActivityIndicator()
+        app_delegate.firebaseObject.getClubList(onCompletionHandler: {array in
+            self.clubArray = array
+            self.tableView.reloadData()
+            self.hideActivityIndicator()
+        })
+    }
+    
     //MARK: - UITableView Delegate
     func numberOfSections(in tableView: UITableView) -> Int {
-        return groupNameArray.count
+        return clubArray.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -42,6 +63,8 @@ class StandingsViewController: OriginalViewController, UITableViewDelegate, UITa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StandingsTableViewCell") as! StandingsTableViewCell
         
+        let club = clubArray[indexPath.row]
+        cell.setupCell(clubModel: club)
         return cell
     }
     
@@ -49,7 +72,7 @@ class StandingsViewController: OriginalViewController, UITableViewDelegate, UITa
         let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: headerHeight))
         let groupNameLabel = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: headerHeight))
         groupNameLabel.textAlignment = .center
-        groupNameLabel.text = groupNameArray[section]
+//        groupNameLabel.text = clubArray[section]
         
         headerView.addSubview(groupNameLabel)
         return headerView
