@@ -1,30 +1,31 @@
 //
-//  ViewController.swift
+//  ResultViewController.swift
 //  FootballLeagues
 //
-//  Created by Thuy Phan on 5/29/18.
+//  Created by Thuy Phan on 6/2/18.
 //  Copyright © 2018 Thuy Phan. All rights reserved.
 //
 
 import UIKit
 
-class StandingsViewController: OriginalViewController, UITableViewDelegate, UITableViewDataSource {
+class ResultViewController: OriginalViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     let cellHeight: CGFloat     = 50.0
     let headerHeight: CGFloat   = 50.0
-    let tableArray = ["Bảng A", "Bảng B", "Bảng C", "Bảng D", "Bảng E", "Bảng F", "Bảng G", "Bảng H"]
-    
+    let tableArray = ["Hôm nay", "Ngày mai"]
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupUI()
-        self.getClubList()
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
-    
+
     // MARK: - Action
     @objc func tappedTableName(sender: UIButton) {
         let table = sender.tag
@@ -40,8 +41,8 @@ class StandingsViewController: OriginalViewController, UITableViewDelegate, UITa
     // MARK: - Get data
     func getClubList() {
         self.showActivityIndicator()
-        app_delegate.firebaseObject.getClubList(onCompletionHandler: {array in
-            app_delegate.clubArray = array
+        app_delegate.firebaseObject.getResultList(onCompletionHandler: {array in
+            app_delegate.resultArray = array
             self.tableView.reloadData()
             self.hideActivityIndicator()
         })
@@ -53,9 +54,9 @@ class StandingsViewController: OriginalViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let clubInSectionArray = app_delegate.clubArray.filter{$0.table == section}
+        let resultInSectionArray = app_delegate.resultArray.filter{$0.table == section}
         
-        return clubInSectionArray.count
+        return resultInSectionArray.count
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -67,12 +68,12 @@ class StandingsViewController: OriginalViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "StandingsTableViewCell") as! StandingsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ResultTableViewCell") as! ResultTableViewCell
         
-        let clubSectionArray = app_delegate.clubArray.filter{$0.table == indexPath.section}
+        let resultSectionArray = app_delegate.resultArray.filter{$0.table == indexPath.section}
         
-        let club = clubSectionArray[indexPath.row]
-        cell.setupCell(clubModel: club)
+        let result = resultSectionArray[indexPath.row]
+        cell.setupCell(resultModel: result)
         return cell
     }
     
@@ -89,10 +90,4 @@ class StandingsViewController: OriginalViewController, UITableViewDelegate, UITa
         return headerView
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let resultViewController = main_storyboard.instantiateViewController(withIdentifier: "ResultViewController") as! ResultViewController
-        
-        self.present(resultViewController, animated: true, completion: nil)
-    }
 }
-

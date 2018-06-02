@@ -9,16 +9,20 @@
 import UIKit
 
 class ClubModel: NSObject {
-    
+    var id              = ""
     var name            = ""
     var flag            = ""
-    var played            = 0
+    var played          = 0
     var points          = 0
     var goals           = 0
     var lost            = 0
     var table           = 0
 
     func initClubModel(club: [String : AnyObject]) {
+        if club["id"] != nil {
+            id = club["id"] as! String
+        }
+        
         if club["name"] != nil {
             name = club["name"] as! String
         }

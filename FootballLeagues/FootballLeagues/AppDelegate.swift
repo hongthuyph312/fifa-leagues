@@ -12,7 +12,9 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var firebaseObject          = FirebaseAction()
+    var firebaseObject    = FirebaseAction()
+    var clubArray         = [ClubModel]()
+    var resultArray       = [ResultModel]()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 

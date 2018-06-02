@@ -145,8 +145,23 @@ class FirebaseAction: NSObject {
         ref.child("discuss").child("comment").child(threadId).child(commentId).child("like").setValue(newLike)
     }
     
-    //MARK: - Clubs
+    // MARK: - Clubs
+    func getResultList(onCompletionHandler: @escaping ([ResultModel]) -> ()) {
+        ref.child("result_list").observe(.value, with: { (snapshot) in
+            let snapDict = snapshot.value as? [String: [String : AnyObject]] ?? [:]
+            var resultArray = [ResultModel]()
+            for resultDict in snapDict {
+                let result = ResultModel()
+                
+                result.initResultModel(resultDict: resultDict.value)
+                resultArray.append(result)
+            }
+            
+            onCompletionHandler(resultArray)
+        })
+    }
     
+    // MARK: - Clubs
     func getClubList(onCompletionHandler: @escaping ([ClubModel]) -> ()) {
         ref.child("club_list").observe(.value, with: { (snapshot) in
             let snapDict = snapshot.value as? [String: [String : AnyObject]] ?? [:]

@@ -1,0 +1,32 @@
+{
+  "result_list" : {
+    "Bảng A - Trận 1" : {
+      "team1Id" : "SaudiArabia",
+      "team2Id" : "Russia",
+      "result" : "0 : 0",
+      "table" : 0
+      "time" : 0.0
+    },
+      "Bảng A - Trận 2" : {
+          "team1Id" : "SouthKorea",
+          "team2Id" : "Russia",
+          "result" : "0 : 0",
+          "table" : 0
+          "time" : 0.0
+      },
+      "Bảng A - Trận 3" : {
+          "team1Id" : "SaudiArabia",
+          "team2Id" : "SouthKorea",
+          "result" : "0 : 0",
+          "table" : 0
+          "time" : 0.0
+      },
+      "Bảng A - Trận 4" : {
+          "team1Id" : "Egypt",
+          "team2Id" : "Uruguay",
+          "result" : "0 : 0",
+          "table" : 0
+          "time" : 0.0
+      }
+  }
+}
