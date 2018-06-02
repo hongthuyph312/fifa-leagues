@@ -12,14 +12,20 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var firebaseObject    = FirebaseAction()
     var clubArray         = [ClubModel]()
     var resultArray       = [ResultModel]()
+    var tabBarHeight: CGFloat   = 0.0
+    var firebaseObject    = FirebaseAction()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        self.window = UIWindow.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
 
         firebaseObject.initFirebase()
-
+        
+        let homeViewController = main_storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+        self.window?.rootViewController = homeViewController
+        
+        self.window?.makeKeyAndVisible()
         return true
     }
 

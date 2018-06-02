@@ -35,6 +35,8 @@
 		D2F99BF720C2F5040067FCE7 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F99BF620C2F5040067FCE7 /* ResultTableViewCell.swift */; };
 		D2F99BF920C2F5A00067FCE7 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F99BF820C2F5A00067FCE7 /* ResultModel.swift */; };
 		D2F99BFB20C2F92D0067FCE7 /* club_list.json in Resources */ = {isa = PBXBuildFile; fileRef = D2F99BFA20C2F92D0067FCE7 /* club_list.json */; };
+		D2F99BFE20C3084A0067FCE7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F99BFD20C3084A0067FCE7 /* HomeViewController.swift */; };
+		D2F99C0120C308E50067FCE7 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F99C0020C308E50067FCE7 /* MainTabBarViewController.swift */; };
 		EE030F74C9E1C6322064F08E /* Pods_FootballLeaguesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8622522649E9C55CA9B89BEF /* Pods_FootballLeaguesTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +108,8 @@
 		D2F99BF620C2F5040067FCE7 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		D2F99BF820C2F5A00067FCE7 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
 		D2F99BFA20C2F92D0067FCE7 /* club_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = club_list.json; sourceTree = "<group>"; };
+		D2F99BFD20C3084A0067FCE7 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D2F99C0020C308E50067FCE7 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		E7747D6A3E28519947E5F262 /* Pods-FootballLeaguesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FootballLeaguesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FootballLeaguesTests/Pods-FootballLeaguesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EF87FF5CC445AA72F9A085A5 /* Pods_FootballLeagues.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FootballLeagues.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -192,6 +196,8 @@
 				D2A1507620BDB892006AE6B0 /* Model */,
 				D2A1506820BDB41A006AE6B0 /* Common */,
 				D2F99BF520C2F1B90067FCE7 /* Storyboard */,
+				D2F99BFF20C308750067FCE7 /* TabBar */,
+				D2F99BFC20C308330067FCE7 /* Home */,
 				D2F99BF220C2F14F0067FCE7 /* Results */,
 				D2A1506520BDAA8B006AE6B0 /* Group */,
 			);
@@ -228,7 +234,6 @@
 		D2A1506820BDB41A006AE6B0 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				D2F31AC720C1C5B700E88D95 /* OriginalViewController.swift */,
 				D2F31AC520C1C38500E88D95 /* FirebaseAction.swift */,
 				D2F31AC320C1C37B00E88D95 /* Common.swift */,
 				D2A1506F20BDB434006AE6B0 /* Define.swift */,
@@ -294,6 +299,23 @@
 				D2A1504020BDA507006AE6B0 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		D2F99BFC20C308330067FCE7 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D2F99BFD20C3084A0067FCE7 /* HomeViewController.swift */,
+				D2F31AC720C1C5B700E88D95 /* OriginalViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		D2F99BFF20C308750067FCE7 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				D2F99C0020C308E50067FCE7 /* MainTabBarViewController.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -519,8 +541,10 @@
 			files = (
 				D2A1507520BDB434006AE6B0 /* Define.swift in Sources */,
 				D2A1507120BDB434006AE6B0 /* NSObjectExtension.swift in Sources */,
+				D2F99BFE20C3084A0067FCE7 /* HomeViewController.swift in Sources */,
 				D2F99BF920C2F5A00067FCE7 /* ResultModel.swift in Sources */,
 				D2C2D5C520C1CA8D0029D8C1 /* ThreadModel.swift in Sources */,
+				D2F99C0120C308E50067FCE7 /* MainTabBarViewController.swift in Sources */,
 				D2F99BF420C2F1AD0067FCE7 /* ResultViewController.swift in Sources */,
 				D2A1507220BDB434006AE6B0 /* StringExtension.swift in Sources */,
 				D2A1507020BDB434006AE6B0 /* Mdate.swift in Sources */,

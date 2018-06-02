@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Standings View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="StandingsViewController" customModule="FootballLeagues" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StandingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="StandingsViewController" customModule="FootballLeagues" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aqy-sO-YES"/>
                         <viewControllerLayoutGuide type="bottom" id="jDz-mg-LYe"/>
@@ -21,9 +22,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="Nc5-wN-R7S">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="106"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Nc5-wN-R7S" secondAttribute="height" multiplier="250:83" id="ZQZ-88-UAM"/>
+                                </constraints>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="krh-LT-FLm">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="106" width="320" height="462"/>
+                                <color key="backgroundColor" red="0.1960784314" green="0.64705882349999999" blue="0.437529999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="StandingsTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="StandingsTableViewCell" rowHeight="50" id="Mvj-Vp-eoC" customClass="StandingsTableViewCell" customModule="FootballLeagues" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="50"/>
@@ -87,6 +94,7 @@
                                                 <constraint firstItem="3Vu-E1-mSs" firstAttribute="centerY" secondItem="e4i-gv-yB4" secondAttribute="centerY" id="wDC-rW-WCu"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.1960784314" green="0.64705882349999999" blue="0.437529999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="countryLabel" destination="hzQ-Q8-1pO" id="bYB-h0-Yds"/>
                                             <outlet property="flagImageView" destination="3Vu-E1-mSs" id="0ON-gx-wN2"/>
@@ -104,10 +112,13 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Nc5-wN-R7S" secondAttribute="trailing" id="ABi-5n-7Vr"/>
+                            <constraint firstItem="Nc5-wN-R7S" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="EKX-Xu-K3L"/>
                             <constraint firstAttribute="trailing" secondItem="krh-LT-FLm" secondAttribute="trailing" id="H5S-Am-Pqq"/>
                             <constraint firstItem="krh-LT-FLm" firstAttribute="bottom" secondItem="jDz-mg-LYe" secondAttribute="top" id="HBV-8A-hzE"/>
-                            <constraint firstItem="krh-LT-FLm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="IDh-cK-bMP"/>
+                            <constraint firstItem="krh-LT-FLm" firstAttribute="top" secondItem="Nc5-wN-R7S" secondAttribute="bottom" id="NuO-2j-S3d"/>
                             <constraint firstItem="krh-LT-FLm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="PQD-0b-j5w"/>
+                            <constraint firstItem="Nc5-wN-R7S" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="TT1-ld-ulr"/>
                         </constraints>
                     </view>
                     <connections>
@@ -116,7 +127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="116" y="118.29085457271366"/>
+            <point key="canvasLocation" x="114.375" y="117.25352112676056"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="SRn-4q-36C">
@@ -227,8 +238,58 @@
             </objects>
             <point key="canvasLocation" x="826.875" y="117.25352112676056"/>
         </scene>
+        <!--Home View Controller-->
+        <scene sceneID="NgO-ZH-Eem">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="96s-XA-JoN" customClass="HomeViewController" customModule="FootballLeagues" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hjn-Cd-bjs"/>
+                        <viewControllerLayoutGuide type="bottom" id="CS6-yX-1TY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iaT-vF-GQI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" restorationIdentifier="GADBannerView" translatesAutoresizingMaskIntoConstraints="NO" id="NOS-3M-uLl" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="AyN-5A-UWA"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NOS-3M-uLl" firstAttribute="leading" secondItem="iaT-vF-GQI" secondAttribute="leading" id="AV5-Lt-eb4"/>
+                            <constraint firstAttribute="trailing" secondItem="NOS-3M-uLl" secondAttribute="trailing" id="J6j-bV-G6n"/>
+                            <constraint firstAttribute="bottom" secondItem="NOS-3M-uLl" secondAttribute="bottom" id="mRQ-pN-K3F"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bannerView" destination="NOS-3M-uLl" id="bbx-Cv-t0j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gr5-RH-hFW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1206" y="117"/>
+        </scene>
+        <!--Main Tab Bar View Controller-->
+        <scene sceneID="AWe-St-GF5">
+            <objects>
+                <tabBarController storyboardIdentifier="MainTabBarViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Yzf-5W-Byq" customClass="MainTabBarViewController" customModule="FootballLeagues" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xzR-dr-2Uw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZN0-mG-4xP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-546" y="117"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Russia" width="60" height="40"/>
+        <image name="banner" width="500" height="166"/>
     </resources>
 </document>

@@ -78,6 +78,7 @@ class StandingsViewController: OriginalViewController, UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: headerHeight))
+        headerView.backgroundColor = Common.mainColor()
         let groupNameButton = UIButton.init(type: UIButtonType.custom)
         groupNameButton.frame = CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: headerHeight)
         groupNameButton.tag = section
