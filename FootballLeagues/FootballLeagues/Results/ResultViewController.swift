@@ -17,8 +17,8 @@ class ResultViewController: OriginalViewController, UITableViewDelegate, UITable
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.setupUI()
+        self.getClubList()
     }
 
     override func didReceiveMemoryWarning() {
