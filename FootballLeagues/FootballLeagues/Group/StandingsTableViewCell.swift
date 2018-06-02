@@ -26,6 +26,7 @@ class StandingsTableViewCell: UITableViewCell {
     }
     
     func setupCell(clubModel: ClubModel) {
+        flagImageView.image = UIImage.init(named: clubModel.flag)
         countryLabel.text = clubModel.name
         playedLabel.text = "\(clubModel.played)"
         goalsDifferenceLabel.text = "\(clubModel.goals) - \(clubModel.lost)"

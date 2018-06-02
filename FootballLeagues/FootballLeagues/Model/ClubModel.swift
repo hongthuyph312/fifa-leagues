@@ -16,7 +16,8 @@ class ClubModel: NSObject {
     var points          = 0
     var goals           = 0
     var lost            = 0
-    
+    var table           = 0
+
     func initClubModel(club: [String : AnyObject]) {
         if club["name"] != nil {
             name = club["name"] as! String
@@ -40,6 +41,10 @@ class ClubModel: NSObject {
         
         if club["lost"] != nil {
             lost = club["lost"] as! Int
+        }
+        
+        if club["table"] != nil {
+            table = club["table"] as! Int
         }
     }
 }

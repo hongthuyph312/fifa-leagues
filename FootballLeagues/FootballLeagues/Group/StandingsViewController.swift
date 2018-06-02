@@ -14,7 +14,7 @@ class StandingsViewController: OriginalViewController, UITableViewDelegate, UITa
     var clubArray               = [ClubModel]()
     let cellHeight: CGFloat     = 50.0
     let headerHeight: CGFloat   = 50.0
-    
+    let tableArray = ["Bảng A", "Bảng B", "Bảng C", "Bảng D", "Bảng E", "Bảng F", "Bảng G", "Bảng H"]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
@@ -45,11 +45,13 @@ class StandingsViewController: OriginalViewController, UITableViewDelegate, UITa
     
     //MARK: - UITableView Delegate
     func numberOfSections(in tableView: UITableView) -> Int {
-        return clubArray.count
+        return tableArray.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        let clubInSectionArray = clubArray.filter{$0.table == section}
+        
+        return clubInSectionArray.count
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -63,7 +65,9 @@ class StandingsViewController: OriginalViewController, UITableViewDelegate, UITa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StandingsTableViewCell") as! StandingsTableViewCell
         
-        let club = clubArray[indexPath.row]
+        let clubSectionArray = clubArray.filter{$0.table == indexPath.section}
+        
+        let club = clubSectionArray[indexPath.row]
         cell.setupCell(clubModel: club)
         return cell
     }
@@ -72,7 +76,7 @@ class StandingsViewController: OriginalViewController, UITableViewDelegate, UITa
         let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: headerHeight))
         let groupNameLabel = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: headerHeight))
         groupNameLabel.textAlignment = .center
-//        groupNameLabel.text = clubArray[section]
+        groupNameLabel.text = tableArray[section]
         
         headerView.addSubview(groupNameLabel)
         return headerView

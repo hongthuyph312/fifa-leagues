@@ -31,6 +31,7 @@
 		D2F31AC820C1C5B700E88D95 /* OriginalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F31AC720C1C5B700E88D95 /* OriginalViewController.swift */; };
 		D2F31ACB20C1C82900E88D95 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2F31ACA20C1C82900E88D95 /* GoogleService-Info.plist */; };
 		D2F31ACE20C1C99E00E88D95 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2F31ACD20C1C99E00E88D95 /* Info.plist */; };
+		D2F99BF120C2E2D80067FCE7 /* football-leagues-e18bb-export.json in Resources */ = {isa = PBXBuildFile; fileRef = D2F99BF020C2E2D80067FCE7 /* football-leagues-e18bb-export.json */; };
 		EE030F74C9E1C6322064F08E /* Pods_FootballLeaguesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8622522649E9C55CA9B89BEF /* Pods_FootballLeaguesTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +99,7 @@
 		D2F31AC720C1C5B700E88D95 /* OriginalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OriginalViewController.swift; sourceTree = "<group>"; };
 		D2F31ACA20C1C82900E88D95 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D2F31ACD20C1C99E00E88D95 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = FootballLeagues/Config/Info.plist; sourceTree = SOURCE_ROOT; };
+		D2F99BF020C2E2D80067FCE7 /* football-leagues-e18bb-export.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "football-leagues-e18bb-export.json"; sourceTree = "<group>"; };
 		E7747D6A3E28519947E5F262 /* Pods-FootballLeaguesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FootballLeaguesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FootballLeaguesTests/Pods-FootballLeaguesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EF87FF5CC445AA72F9A085A5 /* Pods_FootballLeagues.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FootballLeagues.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -254,6 +256,7 @@
 		D2F31AC220C1A82600E88D95 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
+				D2F99BF020C2E2D80067FCE7 /* football-leagues-e18bb-export.json */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				D2F31ACB20C1C82900E88D95 /* GoogleService-Info.plist in Resources */,
 				D2A1503F20BDA507006AE6B0 /* Assets.xcassets in Resources */,
 				D2F31ACE20C1C99E00E88D95 /* Info.plist in Resources */,
+				D2F99BF120C2E2D80067FCE7 /* football-leagues-e18bb-export.json in Resources */,
 				D2A1503D20BDA507006AE6B0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
