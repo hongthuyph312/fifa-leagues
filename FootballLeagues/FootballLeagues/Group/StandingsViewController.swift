@@ -83,6 +83,7 @@ class StandingsViewController: OriginalViewController, UITableViewDelegate, UITa
         groupNameButton.tag = section
         groupNameButton.addTarget(self, action: #selector(tappedTableName(sender:)), for: .touchUpInside)
         groupNameButton.setTitleColor(.white, for: .normal)
+        groupNameButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         groupNameButton.setTitle(tableArray[section], for: .normal)
         
         headerView.addSubview(groupNameButton)
