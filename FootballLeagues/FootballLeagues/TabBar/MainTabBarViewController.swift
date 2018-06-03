@@ -48,7 +48,7 @@ class MainTabBarViewController: UITabBarController {
         tabbarItem.setTitleTextAttributes(normalAttributes, for: .normal)
         tabbarItem.imageInsets = UIEdgeInsetsMake(-2, 0, 2, 0)
         tabbarItem.titlePositionAdjustment = UIOffsetMake(0, -2)
-        tabBar.backgroundColor = Common.mainColor()
+        tabBar.tintColor = Common.mainColor()
         viewController.tabBarItem = tabbarItem
         return viewController
     }

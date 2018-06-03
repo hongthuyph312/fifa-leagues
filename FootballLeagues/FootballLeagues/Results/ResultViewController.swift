@@ -32,6 +32,10 @@ class ResultViewController: OriginalViewController, UITableViewDelegate, UITable
         print("\(table)")
     }
     
+    @IBAction func tappedClose(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     // MARK: - Set up UI
     func setupUI() {
         tableView.tableFooterView = UIView.init(frame: CGRect.zero)

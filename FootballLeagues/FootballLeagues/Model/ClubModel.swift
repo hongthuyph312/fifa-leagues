@@ -13,7 +13,7 @@ class ClubModel: NSObject {
     var name            = ""
     var flag            = ""
     var played          = 0
-    var points          = 0
+    var point           = 0
     var goals           = 0
     var lost            = 0
     var table           = 0
@@ -35,8 +35,8 @@ class ClubModel: NSObject {
             played = club["played"] as! Int
         }
         
-        if club["points"] != nil {
-            points = club["points"] as! Int
+        if club["point"] != nil {
+            point = club["point"] as! Int
         }
         
         if club["goals"] != nil {

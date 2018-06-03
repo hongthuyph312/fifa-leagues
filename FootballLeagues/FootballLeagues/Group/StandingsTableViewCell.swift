@@ -30,6 +30,6 @@ class StandingsTableViewCell: UITableViewCell {
         countryLabel.text = clubModel.name
         playedLabel.text = "\(clubModel.played)"
         goalsDifferenceLabel.text = "\(clubModel.goals) - \(clubModel.lost)"
-        pointsLabel.text = "\(clubModel.points)"
+        pointsLabel.text = "\(clubModel.point)"
     }
 }

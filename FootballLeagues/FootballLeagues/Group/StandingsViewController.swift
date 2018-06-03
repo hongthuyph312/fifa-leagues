@@ -69,7 +69,9 @@ class StandingsViewController: OriginalViewController, UITableViewDelegate, UITa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StandingsTableViewCell") as! StandingsTableViewCell
         
-        let clubSectionArray = app_delegate.clubArray.filter{$0.table == indexPath.section}
+        var clubSectionArray = app_delegate.clubArray.filter{$0.table == indexPath.section}
+        clubSectionArray = clubSectionArray.sorted(by: {$0.point > $1.point})
+        clubSectionArray = clubSectionArray.sorted(by: {($0.goals - $0.lost) > ($1.goals - $1.lost)})
         
         let club = clubSectionArray[indexPath.row]
         cell.setupCell(clubModel: club)
