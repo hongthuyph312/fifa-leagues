@@ -18,12 +18,11 @@ class ClubProfileViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var flagImageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     var clubModel               = ClubModel()
-    var playerArray             = [String]()
+    var playerArray             = [PlayerModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.setupUI()
     }
 
     override func didReceiveMemoryWarning() {
