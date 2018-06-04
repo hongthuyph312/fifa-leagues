@@ -96,8 +96,11 @@ class StandingsViewController: OriginalViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let resultViewController = main_storyboard.instantiateViewController(withIdentifier: "ResultViewController") as! MatchViewController
-        
+        var clubSectionArray = app_delegate.clubArray.filter{$0.table == indexPath.section}
+        let club = clubSectionArray[indexPath.row]
+
+        let resultViewController = main_storyboard.instantiateViewController(withIdentifier: "MatchOfClubViewController") as! MatchOfClubViewController
+        resultViewController.clubModel = club
         self.present(resultViewController, animated: true, completion: nil)
     }
 }
