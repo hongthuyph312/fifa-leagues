@@ -15,8 +15,8 @@ class MatchOfClubViewController: OriginalViewController, UITableViewDelegate, UI
     let cellHeight: CGFloat     = 50.0
     let headerHeight: CGFloat   = 50.0
     var clubModel               = ClubModel()
-    var dateArray = [String]()
-    var resultModelArray = [[ResultModel]]()
+    var dateArray               = [String]()
+    var resultModelArray        = [[ResultModel]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +36,9 @@ class MatchOfClubViewController: OriginalViewController, UITableViewDelegate, UI
     //MARK: - Action
     @IBAction func tappedClose(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func tappedClubProfile(_ sender: UIButton) {
     }
     
     // MARK: - Get data
