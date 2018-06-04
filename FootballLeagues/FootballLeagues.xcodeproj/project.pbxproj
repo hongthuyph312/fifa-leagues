@@ -39,6 +39,8 @@
 		D2F99C0120C308E50067FCE7 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F99C0020C308E50067FCE7 /* MainTabBarViewController.swift */; };
 		EAB13E6B20C5293900DD5863 /* MatchOfTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB13E6A20C5293900DD5863 /* MatchOfTableViewController.swift */; };
 		EAB13E6E20C534B500DD5863 /* MatchOfClubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB13E6D20C534B500DD5863 /* MatchOfClubViewController.swift */; };
+		EAB13E7120C54CAE00DD5863 /* ClubProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB13E7020C54CAE00DD5863 /* ClubProfileViewController.swift */; };
+		EAB13E7420C54E1F00DD5863 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB13E7320C54E1F00DD5863 /* PlayerModel.swift */; };
 		EE030F74C9E1C6322064F08E /* Pods_FootballLeaguesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8622522649E9C55CA9B89BEF /* Pods_FootballLeaguesTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +117,8 @@
 		E7747D6A3E28519947E5F262 /* Pods-FootballLeaguesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FootballLeaguesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FootballLeaguesTests/Pods-FootballLeaguesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EAB13E6A20C5293900DD5863 /* MatchOfTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchOfTableViewController.swift; sourceTree = "<group>"; };
 		EAB13E6D20C534B500DD5863 /* MatchOfClubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchOfClubViewController.swift; sourceTree = "<group>"; };
+		EAB13E7020C54CAE00DD5863 /* ClubProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubProfileViewController.swift; sourceTree = "<group>"; };
+		EAB13E7320C54E1F00DD5863 /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		EF87FF5CC445AA72F9A085A5 /* Pods_FootballLeagues.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FootballLeagues.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -200,10 +204,7 @@
 				D2A1507620BDB892006AE6B0 /* Model */,
 				D2A1506820BDB41A006AE6B0 /* Common */,
 				D2F99BF520C2F1B90067FCE7 /* Storyboard */,
-				D2F99BFF20C308750067FCE7 /* TabBar */,
-				D2F99BFC20C308330067FCE7 /* Home */,
-				D2F99BF220C2F14F0067FCE7 /* Results */,
-				D2A1506520BDAA8B006AE6B0 /* Group */,
+				EAB13E7220C54D9600DD5863 /* ViewControllers */,
 			);
 			path = FootballLeagues;
 			sourceTree = "<group>";
@@ -265,6 +266,7 @@
 				D2C2D5C320C1CA8D0029D8C1 /* ThreadModel.swift */,
 				D2A1507720BDB8C0006AE6B0 /* ClubModel.swift */,
 				D2F99BF820C2F5A00067FCE7 /* ResultModel.swift */,
+				EAB13E7320C54E1F00DD5863 /* PlayerModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -346,6 +348,26 @@
 				EAB13E6D20C534B500DD5863 /* MatchOfClubViewController.swift */,
 			);
 			path = MatchOfClub;
+			sourceTree = "<group>";
+		};
+		EAB13E6F20C54C8500DD5863 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				EAB13E7020C54CAE00DD5863 /* ClubProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		EAB13E7220C54D9600DD5863 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D2F99BFF20C308750067FCE7 /* TabBar */,
+				D2F99BFC20C308330067FCE7 /* Home */,
+				EAB13E6F20C54C8500DD5863 /* Profile */,
+				D2F99BF220C2F14F0067FCE7 /* Results */,
+				D2A1506520BDAA8B006AE6B0 /* Group */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -656,6 +678,7 @@
 				D2C2D5C520C1CA8D0029D8C1 /* ThreadModel.swift in Sources */,
 				D2F99C0120C308E50067FCE7 /* MainTabBarViewController.swift in Sources */,
 				D2F99BF420C2F1AD0067FCE7 /* MatchViewController.swift in Sources */,
+				EAB13E7120C54CAE00DD5863 /* ClubProfileViewController.swift in Sources */,
 				D2A1507220BDB434006AE6B0 /* StringExtension.swift in Sources */,
 				D2A1507020BDB434006AE6B0 /* Mdate.swift in Sources */,
 				D2F31AC420C1C37B00E88D95 /* Common.swift in Sources */,
@@ -666,6 +689,7 @@
 				D2A1507320BDB434006AE6B0 /* UILabelExtension.swift in Sources */,
 				EAB13E6B20C5293900DD5863 /* MatchOfTableViewController.swift in Sources */,
 				D2A1503A20BDA507006AE6B0 /* StandingsViewController.swift in Sources */,
+				EAB13E7420C54E1F00DD5863 /* PlayerModel.swift in Sources */,
 				D2F99BF720C2F5040067FCE7 /* ResultTableViewCell.swift in Sources */,
 				D2A1507C20BDBACB006AE6B0 /* StandingsTableViewCell.swift in Sources */,
 				D2C2D5C420C1CA8D0029D8C1 /* CommentModel.swift in Sources */,
