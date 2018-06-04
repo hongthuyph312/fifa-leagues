@@ -12,10 +12,10 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var clubArray         = [ClubModel]()
-    var resultArray       = [ResultModel]()
+    var clubArray               = [ClubModel]()
+    var allMatchArray           = [ResultModel]()
     var tabBarHeight: CGFloat   = 0.0
-    var firebaseObject    = FirebaseAction()
+    var firebaseObject          = FirebaseAction()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))

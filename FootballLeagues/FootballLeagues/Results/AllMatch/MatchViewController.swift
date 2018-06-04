@@ -8,17 +8,19 @@
 
 import UIKit
 
-class ResultViewController: OriginalViewController, UITableViewDelegate, UITableViewDataSource {
+class MatchViewController: OriginalViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     let cellHeight: CGFloat     = 50.0
     let headerHeight: CGFloat   = 50.0
-    let tableArray = ["Hôm nay", "Ngày mai"]
-
+    var dateArray = [String]()
+    var resultModelArray = [[ResultModel]]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
-        self.getClubList()
+        self.getMatchList()
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,21 +34,41 @@ class ResultViewController: OriginalViewController, UITableViewDelegate, UITable
         print("\(table)")
     }
     
-    @IBAction func tappedClose(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     // MARK: - Set up UI
     func setupUI() {
         tableView.tableFooterView = UIView.init(frame: CGRect.zero)
-        
     }
     
     // MARK: - Get data
-    func getClubList() {
+    func getMatchList() {
         self.showActivityIndicator()
         app_delegate.firebaseObject.getResultList(onCompletionHandler: {array in
-            app_delegate.resultArray = array
+            app_delegate.allMatchArray = array
+            for result in app_delegate.allMatchArray {
+                let dateString = Common.stringFromTimeInterval(timeInterval: result.time, format: "yyyy-MM-dd")
+                if !self.dateArray.contains(dateString) {
+                    // Start new section
+                    self.dateArray.append(dateString)
+                    
+                    // Init array of mathch at this day
+                    var resultOverDateArray = [ResultModel]()
+                    resultOverDateArray.append(result)
+                    
+                    // Add match to this day
+                    self.resultModelArray.append(resultOverDateArray)
+                } else {
+                    guard let index = self.dateArray.index(of: dateString) else {return}
+                    
+                    // Get current array of matchs at this day
+                    var resultOverDateArray = self.resultModelArray[index]
+                    
+                    // Add new match to this day
+                    resultOverDateArray.append(result)
+                    
+                    // Replace matchs at this day
+                    self.resultModelArray[index] = resultOverDateArray
+                }
+            }
             self.tableView.reloadData()
             self.hideActivityIndicator()
         })
@@ -54,13 +76,13 @@ class ResultViewController: OriginalViewController, UITableViewDelegate, UITable
     
     //MARK: - UITableView Delegate
     func numberOfSections(in tableView: UITableView) -> Int {
-        return tableArray.count
+        return resultModelArray.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let resultInSectionArray = app_delegate.resultArray.filter{$0.table == section}
-        
-        return resultInSectionArray.count
+        let resultSectionArray = resultModelArray[section]
+
+        return resultSectionArray.count
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -74,7 +96,7 @@ class ResultViewController: OriginalViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResultTableViewCell") as! ResultTableViewCell
         
-        let resultSectionArray = app_delegate.resultArray.filter{$0.table == indexPath.section}
+        let resultSectionArray = resultModelArray[indexPath.section]
         
         let result = resultSectionArray[indexPath.row]
         cell.setupCell(resultModel: result)
@@ -88,10 +110,11 @@ class ResultViewController: OriginalViewController, UITableViewDelegate, UITable
         groupNameButton.tag = section
         groupNameButton.addTarget(self, action: #selector(tappedTableName(sender:)), for: .touchUpInside)
         groupNameButton.setTitleColor(Common.mainColor(), for: .normal)
-        groupNameButton.setTitle(tableArray[section], for: .normal)
+        if dateArray.count > section {
+            groupNameButton.setTitle(dateArray[section], for: .normal)
+        }
         
         headerView.addSubview(groupNameButton)
         return headerView
     }
-    
 }

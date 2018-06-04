@@ -33,6 +33,46 @@ class Common: NSObject {
     }
     
     // MARK: - DATE
+    
+    static func localToUTC(date:String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "h:mm a"
+        dateFormatter.calendar = NSCalendar.current
+        dateFormatter.timeZone = TimeZone.current
+        
+        let dt = dateFormatter.date(from: date)
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        dateFormatter.dateFormat = "H:mm:ss"
+        
+        return dateFormatter.string(from: dt!)
+    }
+    
+    static func UTCToLocal(date:String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        
+        let localDate = dateFormatter.date(from: date)
+        dateFormatter.timeZone = TimeZone.current
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        
+        return dateFormatter.string(from: localDate!)
+    }
+    
+    static func timeIntervalFromDateString(date:String) -> Double{
+        // COnvert from string to Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        dateFormatter.locale = NSLocale.system
+        let date = dateFormatter.date(from:date)!
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year, .month, .day, .hour], from: date)
+        let finalDate = calendar.date(from:components)
+        
+        // Return to timeInterval
+        return (finalDate?.timeIntervalSince1970)!
+    }
+    
     // Convert from Date to String of timeInterval
     static func stringFromDate(date:Date, format: String) -> String {
         let formatter = DateFormatter.init()

@@ -28,13 +28,16 @@ class StandingsViewController: OriginalViewController, UITableViewDelegate, UITa
     // MARK: - Action
     @objc func tappedTableName(sender: UIButton) {
         let table = sender.tag
+        let matchOfTableViewController = main_storyboard.instantiateViewController(withIdentifier: "MatchOfTableViewController") as! MatchOfTableViewController
+        matchOfTableViewController.table = table
+            self.present(matchOfTableViewController, animated: true, completion: nil)
+
         print("\(table)")
     }
     
     // MARK: - Set up UI
     func setupUI() {
         tableView.tableFooterView = UIView.init(frame: CGRect.zero)
-        
     }
     
     // MARK: - Get data
@@ -93,7 +96,7 @@ class StandingsViewController: OriginalViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let resultViewController = main_storyboard.instantiateViewController(withIdentifier: "ResultViewController") as! ResultViewController
+        let resultViewController = main_storyboard.instantiateViewController(withIdentifier: "ResultViewController") as! MatchViewController
         
         self.present(resultViewController, animated: true, completion: nil)
     }

@@ -33,7 +33,8 @@ class ResultModel: NSObject {
         }
         
         if resultDict["time"] != nil {
-            time = resultDict["time"] as! Double
+            let timeString = resultDict["time"] as! String
+            time = Common.timeIntervalFromDateString(date: timeString)
         }
     }
 }
