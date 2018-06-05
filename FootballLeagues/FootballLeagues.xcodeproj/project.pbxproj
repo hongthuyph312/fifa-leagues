@@ -10,6 +10,7 @@
 		6242DFBB6F6596DE4EE96E6E /* Pods_FootballLeagues.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF87FF5CC445AA72F9A085A5 /* Pods_FootballLeagues.framework */; };
 		731AA825EFE446A6C5F018F6 /* Pods_FootballLeaguesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BD98BC864E8D1DD14C0BC13 /* Pods_FootballLeaguesUITests.framework */; };
 		D2820B3320C6E1B30073AADD /* MatchDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2820B3220C6E1B30073AADD /* MatchDetailTableViewCell.swift */; };
+		D2820B3520C6E74B0073AADD /* RealTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2820B3420C6E74B0073AADD /* RealTimeModel.swift */; };
 		D2A1503820BDA507006AE6B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A1503720BDA507006AE6B0 /* AppDelegate.swift */; };
 		D2A1503A20BDA507006AE6B0 /* StandingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A1503920BDA507006AE6B0 /* StandingsViewController.swift */; };
 		D2A1503D20BDA507006AE6B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2A1503B20BDA507006AE6B0 /* Main.storyboard */; };
@@ -85,6 +86,7 @@
 		8622522649E9C55CA9B89BEF /* Pods_FootballLeaguesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FootballLeaguesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAE5EC63760709C5356949E5 /* Pods-FootballLeagues.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FootballLeagues.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FootballLeagues/Pods-FootballLeagues.debug.xcconfig"; sourceTree = "<group>"; };
 		D2820B3220C6E1B30073AADD /* MatchDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailTableViewCell.swift; sourceTree = "<group>"; };
+		D2820B3420C6E74B0073AADD /* RealTimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTimeModel.swift; sourceTree = "<group>"; };
 		D2A1503420BDA507006AE6B0 /* FootballLeagues.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootballLeagues.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2A1503720BDA507006AE6B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2A1503920BDA507006AE6B0 /* StandingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsViewController.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				D2A1507720BDB8C0006AE6B0 /* ClubModel.swift */,
 				D2F99BF820C2F5A00067FCE7 /* ResultModel.swift */,
 				EAB13E7320C54E1F00DD5863 /* PlayerModel.swift */,
+				D2820B3420C6E74B0073AADD /* RealTimeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -690,6 +693,7 @@
 			files = (
 				D2A1507520BDB434006AE6B0 /* Define.swift in Sources */,
 				D2A1507120BDB434006AE6B0 /* NSObjectExtension.swift in Sources */,
+				D2820B3520C6E74B0073AADD /* RealTimeModel.swift in Sources */,
 				D2F99BFE20C3084A0067FCE7 /* HomeViewController.swift in Sources */,
 				D2F99BF920C2F5A00067FCE7 /* ResultModel.swift in Sources */,
 				D2C2D5C520C1CA8D0029D8C1 /* ThreadModel.swift in Sources */,

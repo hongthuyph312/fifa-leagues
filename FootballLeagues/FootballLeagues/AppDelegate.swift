@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let homeViewController = main_storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
         self.window?.rootViewController = homeViewController
-        
+        UIApplication.shared.statusBarStyle = .lightContent
         self.window?.makeKeyAndVisible()
         return true
     }

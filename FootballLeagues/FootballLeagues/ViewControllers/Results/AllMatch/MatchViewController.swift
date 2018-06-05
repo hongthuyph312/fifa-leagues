@@ -10,7 +10,6 @@ import UIKit
 
 class MatchViewController: OriginalViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     let cellHeight: CGFloat     = 50.0
     let headerHeight: CGFloat   = 50.0
@@ -113,5 +112,14 @@ class MatchViewController: OriginalViewController, UITableViewDelegate, UITableV
         
         headerView.addSubview(groupNameButton)
         return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let resultSectionArray = resultModelArray[indexPath.section]
+        let result = resultSectionArray[indexPath.row]
+
+        let matchDetailViewController = main_storyboard.instantiateViewController(withIdentifier: "MatchDetailViewController") as! MatchDetailViewController
+        matchDetailViewController.result = result
+        self.present(matchDetailViewController, animated: true, completion: nil)
     }
 }

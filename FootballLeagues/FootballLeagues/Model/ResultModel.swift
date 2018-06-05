@@ -14,6 +14,7 @@ class ResultModel: NSObject {
     var result          = ""
     var table           = 0
     var time            = 0.0
+    var realTimeArray   = [RealTimeModel]()
     
     func initResultModel(resultDict: [String : AnyObject]) {
         if resultDict["team1Id"] != nil {
@@ -35,6 +36,15 @@ class ResultModel: NSObject {
         if resultDict["time"] != nil {
             let timeString = resultDict["time"] as! String
             time = Common.timeIntervalFromDateString(date: timeString)
+        }
+        
+        if resultDict["realTime"] != nil {
+            let array = resultDict["realTime"] as! [[String: AnyObject]]
+            for dict in array {
+                let realTime = RealTimeModel()
+                realTime.initRealTimeModel(realTimeDict: dict)
+                realTimeArray.append(realTime)
+            }
         }
     }
 }
