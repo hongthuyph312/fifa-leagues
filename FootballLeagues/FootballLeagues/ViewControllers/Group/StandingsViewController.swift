@@ -101,6 +101,7 @@ class StandingsViewController: OriginalViewController, UITableViewDelegate, UITa
 
         let resultViewController = main_storyboard.instantiateViewController(withIdentifier: "MatchOfClubViewController") as! MatchOfClubViewController
         resultViewController.clubModel = club
+        resultViewController.rank = indexPath.row
         self.present(resultViewController, animated: true, completion: nil)
     }
 }

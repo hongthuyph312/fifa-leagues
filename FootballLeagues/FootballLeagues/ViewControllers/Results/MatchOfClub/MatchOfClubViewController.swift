@@ -18,6 +18,7 @@ class MatchOfClubViewController: OriginalViewController, UITableViewDelegate, UI
     var clubModel               = ClubModel()
     var dateArray               = [String]()
     var resultModelArray        = [[ResultModel]]()
+    var rank                    = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,7 @@ class MatchOfClubViewController: OriginalViewController, UITableViewDelegate, UI
     // MARK: - Set up UI
     func setupUI() {
         tableView.tableFooterView = UIView.init(frame: CGRect.zero)
+        clubNameButton.setTitle(clubModel.name, for: .normal)
     }
     
     //MARK: - Action
@@ -40,6 +42,9 @@ class MatchOfClubViewController: OriginalViewController, UITableViewDelegate, UI
     }
     
     @IBAction func tappedClubProfile(_ sender: UIButton) {
+        let clubProfileViewController = main_storyboard.instantiateViewController(withIdentifier: "ClubProfileViewController") as! ClubProfileViewController
+        clubProfileViewController.rank = rank
+        self.present(clubProfileViewController, animated: true, completion: nil)
     }
     
     // MARK: - Get data

@@ -25,6 +25,7 @@ class ClubProfileViewController: OriginalViewController, UITableViewDataSource, 
         super.viewDidLoad()
         self.setupUI()
         self.setupData()
+        self.getPlayerList()
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,7 +39,7 @@ class ClubProfileViewController: OriginalViewController, UITableViewDataSource, 
     }
     
     func setupData() {
-        rankLabel.text      = "\(rank)"
+        rankLabel.text      = "\(rank + 1)"
         clubNameLabel.text  = clubModel.name
         pointLabel.text     = "\(clubModel.point)"
         gdLabel.text        = "\(clubModel.goals)-\(clubModel.lost)"
@@ -71,10 +72,10 @@ class ClubProfileViewController: OriginalViewController, UITableViewDataSource, 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ResultTableViewCell") as! ResultTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ClubProfileTableViewCell") as! ClubProfileTableViewCell
         
         let player = playerArray[indexPath.row]
-        cell.setupCell(resultModel: result)
+        cell.setupCell(playerModel: player)
         return cell
     }
 }
