@@ -42,6 +42,7 @@
 		EAB13E7120C54CAE00DD5863 /* ClubProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB13E7020C54CAE00DD5863 /* ClubProfileViewController.swift */; };
 		EAB13E7420C54E1F00DD5863 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB13E7320C54E1F00DD5863 /* PlayerModel.swift */; };
 		EAFA321620C64A8D0045CFAF /* ClubProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFA321520C64A8D0045CFAF /* ClubProfileTableViewCell.swift */; };
+		EAFA321920C699B30045CFAF /* MatchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFA321820C699B30045CFAF /* MatchDetailViewController.swift */; };
 		EE030F74C9E1C6322064F08E /* Pods_FootballLeaguesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8622522649E9C55CA9B89BEF /* Pods_FootballLeaguesTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -121,6 +122,7 @@
 		EAB13E7020C54CAE00DD5863 /* ClubProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubProfileViewController.swift; sourceTree = "<group>"; };
 		EAB13E7320C54E1F00DD5863 /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		EAFA321520C64A8D0045CFAF /* ClubProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubProfileTableViewCell.swift; sourceTree = "<group>"; };
+		EAFA321820C699B30045CFAF /* MatchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailViewController.swift; sourceTree = "<group>"; };
 		EF87FF5CC445AA72F9A085A5 /* Pods_FootballLeagues.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FootballLeagues.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -294,6 +296,7 @@
 		D2F99BF220C2F14F0067FCE7 /* Results */ = {
 			isa = PBXGroup;
 			children = (
+				EAFA321720C699950045CFAF /* MatchDetail */,
 				EAB13E6C20C5344E00DD5863 /* MatchOfClub */,
 				EAB13E6920C528FC00DD5863 /* TableMatchs */,
 				EAB13E6820C5258F00DD5863 /* AllMatch */,
@@ -371,6 +374,14 @@
 				D2A1506520BDAA8B006AE6B0 /* Group */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		EAFA321720C699950045CFAF /* MatchDetail */ = {
+			isa = PBXGroup;
+			children = (
+				EAFA321820C699B30045CFAF /* MatchDetailViewController.swift */,
+			);
+			path = MatchDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -681,6 +692,7 @@
 				D2C2D5C520C1CA8D0029D8C1 /* ThreadModel.swift in Sources */,
 				D2F99C0120C308E50067FCE7 /* MainTabBarViewController.swift in Sources */,
 				D2F99BF420C2F1AD0067FCE7 /* MatchViewController.swift in Sources */,
+				EAFA321920C699B30045CFAF /* MatchDetailViewController.swift in Sources */,
 				EAB13E7120C54CAE00DD5863 /* ClubProfileViewController.swift in Sources */,
 				D2A1507220BDB434006AE6B0 /* StringExtension.swift in Sources */,
 				D2A1507020BDB434006AE6B0 /* Mdate.swift in Sources */,
