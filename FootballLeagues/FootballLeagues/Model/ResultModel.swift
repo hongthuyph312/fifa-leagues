@@ -34,8 +34,9 @@ class ResultModel: NSObject {
         }
         
         if resultDict["time"] != nil {
-            let timeString = resultDict["time"] as! String
-            time = Common.timeIntervalFromDateString(date: timeString)
+            let utcTimeString = resultDict["time"] as! String
+            let localTimeString = Common.UTCToLocal(date: utcTimeString)
+            time = Common.timeIntervalFromDateString(date: localTimeString)
         }
         
         if resultDict["realTime"] != nil {

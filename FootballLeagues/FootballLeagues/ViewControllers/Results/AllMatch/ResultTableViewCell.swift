@@ -10,6 +10,7 @@ import UIKit
 
 class ResultTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var team1Label: UILabel!
     @IBOutlet weak var team2Label: UILabel!
@@ -29,6 +30,7 @@ class ResultTableViewCell: UITableViewCell {
         let team2 = app_delegate.clubArray.filter{$0.id == resultModel.team2Id}.first
         
         resultLabel.text = resultModel.result
+        timeLabel.text = Common.stringFromTimeInterval(timeInterval: resultModel.time, format: "HH:mm")
         team1Label.text = team1?.name
         flag1ImageView.image = UIImage.init(named: (team1?.flag)!)
 

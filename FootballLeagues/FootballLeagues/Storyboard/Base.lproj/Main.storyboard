@@ -145,7 +145,7 @@
                                 <rect key="frame" x="0.0" y="106" width="320" height="462"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="ResultTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ResultTableViewCell" rowHeight="60" id="T0s-ft-FgA" customClass="ResultTableViewCell" customModule="FootballLeagues" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ResultTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ResultTableViewCell" rowHeight="60" id="T0s-ft-FgA" customClass="ResultTableViewCell" customModule="FootballLeagues" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="T0s-ft-FgA" id="WDB-af-7Ug">
@@ -153,7 +153,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 : 5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Jr-Gl-CH7">
-                                                    <rect key="frame" x="138" y="17.5" width="45" height="24"/>
+                                                    <rect key="frame" x="138" y="13" width="45" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="45" id="pg0-66-1CQ"/>
                                                     </constraints>
@@ -187,8 +187,15 @@
                                                         <constraint firstAttribute="height" constant="30" id="in1-CW-fZ5"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSw-Bg-vdG">
+                                                    <rect key="frame" x="142.5" y="42" width="36" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="GSw-Bg-vdG" firstAttribute="top" secondItem="1Jr-Gl-CH7" secondAttribute="bottom" constant="5" id="3yG-3z-cqk"/>
                                                 <constraint firstItem="77t-10-Gzr" firstAttribute="leading" secondItem="04M-Ms-QRx" secondAttribute="trailing" constant="10" id="9wB-qd-u5y"/>
                                                 <constraint firstItem="1Jr-Gl-CH7" firstAttribute="centerX" secondItem="WDB-af-7Ug" secondAttribute="centerX" id="9xE-xF-Uvr"/>
                                                 <constraint firstItem="8ne-5I-anI" firstAttribute="centerY" secondItem="WDB-af-7Ug" secondAttribute="centerY" id="DQe-1O-kIL"/>
@@ -199,8 +206,9 @@
                                                 <constraint firstAttribute="trailing" secondItem="v6a-82-oIZ" secondAttribute="trailing" constant="5" id="W70-nU-uHn"/>
                                                 <constraint firstItem="04M-Ms-QRx" firstAttribute="centerY" secondItem="WDB-af-7Ug" secondAttribute="centerY" id="YcO-G1-aNk"/>
                                                 <constraint firstAttribute="bottom" secondItem="8ne-5I-anI" secondAttribute="bottom" id="aB8-vl-ZUi"/>
+                                                <constraint firstItem="GSw-Bg-vdG" firstAttribute="centerX" secondItem="WDB-af-7Ug" secondAttribute="centerX" id="eUh-wJ-vaS"/>
                                                 <constraint firstItem="8ne-5I-anI" firstAttribute="leading" secondItem="1Jr-Gl-CH7" secondAttribute="trailing" constant="5" id="nFs-zw-MC7"/>
-                                                <constraint firstItem="1Jr-Gl-CH7" firstAttribute="centerY" secondItem="WDB-af-7Ug" secondAttribute="centerY" id="pa5-yq-G7q"/>
+                                                <constraint firstItem="1Jr-Gl-CH7" firstAttribute="centerY" secondItem="WDB-af-7Ug" secondAttribute="centerY" constant="-5" id="pa5-yq-G7q"/>
                                                 <constraint firstItem="04M-Ms-QRx" firstAttribute="leading" secondItem="WDB-af-7Ug" secondAttribute="leading" constant="5" id="qcP-P3-9dI"/>
                                                 <constraint firstItem="v6a-82-oIZ" firstAttribute="centerY" secondItem="WDB-af-7Ug" secondAttribute="centerY" id="u96-8I-VLS"/>
                                                 <constraint firstItem="v6a-82-oIZ" firstAttribute="leading" secondItem="8ne-5I-anI" secondAttribute="trailing" constant="10" id="vqC-3y-IhC"/>
@@ -213,6 +221,7 @@
                                             <outlet property="resultLabel" destination="1Jr-Gl-CH7" id="Nua-1u-LVl"/>
                                             <outlet property="team1Label" destination="77t-10-Gzr" id="dcg-HS-yoE"/>
                                             <outlet property="team2Label" destination="8ne-5I-anI" id="jJI-eo-Gdq"/>
+                                            <outlet property="timeLabel" destination="GSw-Bg-vdG" id="NQa-vq-KSN"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
