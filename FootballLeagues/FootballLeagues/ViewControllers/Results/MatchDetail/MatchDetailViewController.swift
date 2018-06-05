@@ -10,6 +10,12 @@ import UIKit
 
 class MatchDetailViewController: UIViewController {
 
+    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var team2Label: UILabel!
+    @IBOutlet weak var team1Label: UILabel!
+    @IBOutlet weak var team2ImageView: UIImageView!
+    @IBOutlet weak var team1ImageView: UIImageView!
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 

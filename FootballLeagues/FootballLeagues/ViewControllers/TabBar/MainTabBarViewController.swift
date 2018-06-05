@@ -30,7 +30,7 @@ class MainTabBarViewController: UITabBarController {
         
         let resultViewController = main_storyboard.instantiateViewController(withIdentifier: "MatchViewController") as! MatchViewController
         let tabBar2 = self.setupController(resultViewController,
-                                           tabName: "Result",
+                                           tabName: "Matchs",
                                            image: IMAGE("standings"),
                                            selectedImage: IMAGE("standings"))
 
