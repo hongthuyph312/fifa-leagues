@@ -231,13 +231,13 @@
 			path = FootballLeaguesUITests;
 			sourceTree = "<group>";
 		};
-		D2A1506520BDAA8B006AE6B0 /* Group */ = {
+		D2A1506520BDAA8B006AE6B0 /* Standings */ = {
 			isa = PBXGroup;
 			children = (
 				D2A1503920BDA507006AE6B0 /* StandingsViewController.swift */,
 				D2A1507B20BDBACB006AE6B0 /* StandingsTableViewCell.swift */,
 			);
-			path = Group;
+			path = Standings;
 			sourceTree = "<group>";
 		};
 		D2A1506820BDB41A006AE6B0 /* Common */ = {
@@ -371,7 +371,7 @@
 				D2F99BFC20C308330067FCE7 /* Home */,
 				EAB13E6F20C54C8500DD5863 /* Profile */,
 				D2F99BF220C2F14F0067FCE7 /* Results */,
-				D2A1506520BDAA8B006AE6B0 /* Group */,
+				D2A1506520BDAA8B006AE6B0 /* Standings */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";

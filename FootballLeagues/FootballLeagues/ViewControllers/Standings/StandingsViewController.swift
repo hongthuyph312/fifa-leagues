@@ -43,10 +43,13 @@ class StandingsViewController: OriginalViewController, UITableViewDelegate, UITa
     // MARK: - Get data
     func getClubList() {
         self.showActivityIndicator()
-        app_delegate.firebaseObject.getClubList(onCompletionHandler: {array in
-            app_delegate.clubArray = array
-            self.tableView.reloadData()
-            self.hideActivityIndicator()
+        app_delegate.firebaseObject.getResultList(onCompletionHandler: {array in
+            app_delegate.allMatchArray = array
+            app_delegate.firebaseObject.getClubList(onCompletionHandler: {array in
+                app_delegate.clubArray = array
+                self.tableView.reloadData()
+                self.hideActivityIndicator()
+            })
         })
     }
     
@@ -87,8 +90,8 @@ class StandingsViewController: OriginalViewController, UITableViewDelegate, UITa
         groupNameButton.frame = CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: headerHeight)
         groupNameButton.tag = section
         groupNameButton.addTarget(self, action: #selector(tappedTableName(sender:)), for: .touchUpInside)
-        groupNameButton.setTitleColor(.white, for: .normal)
-        groupNameButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        groupNameButton.setTitleColor(Common.mainColor(), for: .normal)
+        groupNameButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22)
         groupNameButton.setTitle(tableArray[section], for: .normal)
         
         headerView.addSubview(groupNameButton)

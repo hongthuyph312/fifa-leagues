@@ -42,36 +42,33 @@ class MatchViewController: OriginalViewController, UITableViewDelegate, UITableV
     // MARK: - Get data
     func getMatchList() {
         self.showActivityIndicator()
-        app_delegate.firebaseObject.getResultList(onCompletionHandler: {array in
-            app_delegate.allMatchArray = array
-            for result in app_delegate.allMatchArray {
-                let dateString = Common.stringFromTimeInterval(timeInterval: result.time, format: "yyyy-MM-dd")
-                if !self.dateArray.contains(dateString) {
-                    // Start new section
-                    self.dateArray.append(dateString)
-                    
-                    // Init array of mathch at this day
-                    var resultOverDateArray = [ResultModel]()
-                    resultOverDateArray.append(result)
-                    
-                    // Add match to this day
-                    self.resultModelArray.append(resultOverDateArray)
-                } else {
-                    guard let index = self.dateArray.index(of: dateString) else {return}
-                    
-                    // Get current array of matchs at this day
-                    var resultOverDateArray = self.resultModelArray[index]
-                    
-                    // Add new match to this day
-                    resultOverDateArray.append(result)
-                    
-                    // Replace matchs at this day
-                    self.resultModelArray[index] = resultOverDateArray
-                }
+        for result in app_delegate.allMatchArray {
+            let dateString = Common.stringFromTimeInterval(timeInterval: result.time, format: "yyyy-MM-dd")
+            if !self.dateArray.contains(dateString) {
+                // Start new section
+                self.dateArray.append(dateString)
+                
+                // Init array of mathch at this day
+                var resultOverDateArray = [ResultModel]()
+                resultOverDateArray.append(result)
+                
+                // Add match to this day
+                self.resultModelArray.append(resultOverDateArray)
+            } else {
+                guard let index = self.dateArray.index(of: dateString) else {return}
+                
+                // Get current array of matchs at this day
+                var resultOverDateArray = self.resultModelArray[index]
+                
+                // Add new match to this day
+                resultOverDateArray.append(result)
+                
+                // Replace matchs at this day
+                self.resultModelArray[index] = resultOverDateArray
             }
-            self.tableView.reloadData()
-            self.hideActivityIndicator()
-        })
+        }
+        self.tableView.reloadData()
+        self.hideActivityIndicator()
     }
     
     //MARK: - UITableView Delegate
