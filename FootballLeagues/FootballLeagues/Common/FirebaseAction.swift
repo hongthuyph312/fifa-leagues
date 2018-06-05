@@ -177,6 +177,21 @@ class FirebaseAction: NSObject {
         })
     }
     
+    // MARK: - Clubs
+    func getPlayerList(clubId: String, onCompletionHandler: @escaping ([PlayerModel]) -> ()) {
+        ref.child("player_list").child(clubId).observe(.value, with: { (snapshot) in
+            let snapDict = snapshot.value as? [String: [String : AnyObject]] ?? [:]
+            var playerArray = [PlayerModel]()
+            for playerDict in snapDict {
+                let player = PlayerModel()
+                
+                player.initPlayerModel(playerDict: playerDict.value)
+                playerArray.append(player)
+            }
+            onCompletionHandler(playerArray)
+        })
+    }
+    
     func getDoctorComment(doctorId: String, onCompletionHandler: @escaping ([CommentModel]) -> ()) {
         self.getUser(max: 10000, onCompletionHandler: { userDict in
             self.ref.child("doctor").child(doctorId).queryOrderedByKey().observe(.value, with: { (snapshot) in

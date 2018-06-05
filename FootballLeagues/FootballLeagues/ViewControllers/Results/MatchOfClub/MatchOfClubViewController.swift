@@ -10,6 +10,7 @@ import UIKit
 
 class MatchOfClubViewController: OriginalViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var clubNameButton: UIButton!
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     let cellHeight: CGFloat     = 50.0
