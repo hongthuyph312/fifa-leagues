@@ -42,8 +42,9 @@ class MatchOfClubViewController: OriginalViewController, UITableViewDelegate, UI
     }
     
     @IBAction func tappedClubProfile(_ sender: UIButton) {
-        let clubProfileViewController = main_storyboard.instantiateViewController(withIdentifier: "ClubProfileViewController") as! ClubProfileViewController
-        clubProfileViewController.rank = rank
+        let clubProfileViewController       = main_storyboard.instantiateViewController(withIdentifier: "ClubProfileViewController") as! ClubProfileViewController
+        clubProfileViewController.clubModel = clubModel
+        clubProfileViewController.rank      = rank
         self.present(clubProfileViewController, animated: true, completion: nil)
     }
     

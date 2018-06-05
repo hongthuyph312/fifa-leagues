@@ -18,10 +18,10 @@ class ClubProfileTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
+        playerImageView.customBorder(radius: playerImageView.frame.height/2, color: .clear)
         super.setSelected(selected, animated: animated)
     }
 
