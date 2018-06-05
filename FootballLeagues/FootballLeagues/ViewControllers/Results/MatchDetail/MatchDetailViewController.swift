@@ -22,15 +22,31 @@ class MatchDetailViewController: OriginalViewController, UITableViewDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
+        self.setupData()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    // MARK: - Set up UI
+    // MARK: - Set up
     func setupUI() {
             tableView.tableFooterView = UIView.init(frame: CGRect.zero)
+    }
+    
+    func setupData() {
+        let team1 = app_delegate.clubArray.filter{$0.id == result.team1Id}.first
+        resultLabel.text = result.result
+        
+        let team2 = app_delegate.clubArray.filter{$0.id == result.team2Id}.first
+
+        // Set up team 1
+        team1Label.text = team1?.name
+        team1ImageView.image = UIImage.init(named: (team1?.flag)!)
+        
+        // Set up team 2
+        team2Label.text = team2?.name
+        team2ImageView.image = UIImage.init(named: (team2?.flag)!)
     }
     
     //MARK: - Action
