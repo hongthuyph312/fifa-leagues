@@ -157,7 +157,7 @@ class FirebaseAction: NSObject {
                 resultArray.append(result)
             }
             
-            onCompletionHandler(resultArray)
+            onCompletionHandler(resultArray.sorted{$0.time < $1.time})
         })
     }
     
