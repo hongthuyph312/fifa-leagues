@@ -34,19 +34,19 @@ class MatchDetailTableViewCell: UITableViewCell {
             switch realTimeModel.type {
             case 0:
                 // Goals
-                team1ImageView.image = UIImage.init(named: "")
+                team1ImageView.image = UIImage.init(named: "goals")
             case 1:
-                // yellow
-                team1ImageView.image = UIImage.init(named: "")
+                // exchange player
+                team1ImageView.image = UIImage.init(named: "exchange")
             case 2:
-                // red
-                team1ImageView.image = UIImage.init(named: "")
+                // yellow card
+                team1ImageView.image = UIImage.init(named: "yellowCard")
             case 3:
-                // change people
-                team1ImageView.image = UIImage.init(named: "")
+                // red card
+                team1ImageView.image = UIImage.init(named: "redCard")
             default:
                 // Injury
-                team1ImageView.image = UIImage.init(named: "")
+                team1ImageView.image = UIImage.init(named: "injuryPlayer")
             }
             
             // Re-set team 2
@@ -60,19 +60,19 @@ class MatchDetailTableViewCell: UITableViewCell {
             switch realTimeModel.type {
             case 0:
                 // Goals
-                team2ImageView.image = UIImage.init(named: "")
+                team2ImageView.image = UIImage.init(named: "goals")
             case 1:
-                // yellow
-                team2ImageView.image = UIImage.init(named: "")
+                // exchange player
+                team2ImageView.image = UIImage.init(named: "exchange")
             case 2:
-                // red
-                team2ImageView.image = UIImage.init(named: "")
+                // yellow card
+                team2ImageView.image = UIImage.init(named: "yellowCard")
             case 3:
-                // change people
-                team2ImageView.image = UIImage.init(named: "")
+                // red card
+                team2ImageView.image = UIImage.init(named: "redCard")
             default:
-                // Injury
-                team2ImageView.image = UIImage.init(named: "")
+                // injury
+                team2ImageView.image = UIImage.init(named: "injuryPlayer")
             }
             
             // Re-set team 1
