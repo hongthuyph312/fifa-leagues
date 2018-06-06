@@ -101,6 +101,8 @@ class StandingsViewController: OriginalViewController, UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var clubSectionArray = app_delegate.clubArray.filter{$0.table == indexPath.section}
+        clubSectionArray = clubSectionArray.sorted(by: {$0.point > $1.point})
+        clubSectionArray = clubSectionArray.sorted(by: {($0.goals - $0.lost) > ($1.goals - $1.lost)})
         let club = clubSectionArray[indexPath.row]
 
         let resultViewController = main_storyboard.instantiateViewController(withIdentifier: "MatchOfClubViewController") as! MatchOfClubViewController

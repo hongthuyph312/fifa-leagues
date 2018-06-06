@@ -125,4 +125,13 @@ class MatchOfClubViewController: OriginalViewController, UITableViewDelegate, UI
         headerView.addSubview(groupNameButton)
         return headerView
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let resultSectionArray = resultModelArray[indexPath.section]
+        let result = resultSectionArray[indexPath.row]
+        
+        let matchDetailViewController = main_storyboard.instantiateViewController(withIdentifier: "MatchDetailViewController") as! MatchDetailViewController
+        matchDetailViewController.result = result
+        self.present(matchDetailViewController, animated: true, completion: nil)
+    }
 }
