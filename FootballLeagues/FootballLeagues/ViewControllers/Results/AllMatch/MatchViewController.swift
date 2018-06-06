@@ -11,7 +11,7 @@ import UIKit
 class MatchViewController: OriginalViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    let cellHeight: CGFloat     = 50.0
+    let cellHeight: CGFloat     = 60.0
     let headerHeight: CGFloat   = 50.0
     var dateArray = [String]()
     var resultModelArray = [[ResultModel]]()
@@ -101,6 +101,7 @@ class MatchViewController: OriginalViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: headerHeight))
+        headerView.backgroundColor = .white
         let groupNameButton = UIButton.init(type: UIButtonType.custom)
         groupNameButton.frame = CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: headerHeight)
         groupNameButton.tag = section

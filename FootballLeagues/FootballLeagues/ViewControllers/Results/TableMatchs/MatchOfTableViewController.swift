@@ -12,7 +12,7 @@ class MatchOfTableViewController: OriginalViewController, UITableViewDelegate, U
 
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
-    let cellHeight: CGFloat     = 50.0
+    let cellHeight: CGFloat     = 60.0
     let headerHeight: CGFloat   = 50.0
     var table                   = 0
     var dateArray = [String]()
