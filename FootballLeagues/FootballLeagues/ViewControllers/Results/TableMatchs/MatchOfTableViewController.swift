@@ -91,7 +91,7 @@ class MatchOfTableViewController: OriginalViewController, UITableViewDelegate, U
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ResultTableViewCell") as! ResultTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MatchOfTableViewCell") as! MatchOfTableViewCell
         
         let resultSectionArray = resultModelArray[indexPath.section]
         

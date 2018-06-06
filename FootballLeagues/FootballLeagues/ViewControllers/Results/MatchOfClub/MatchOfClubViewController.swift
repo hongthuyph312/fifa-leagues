@@ -101,7 +101,7 @@ class MatchOfClubViewController: OriginalViewController, UITableViewDelegate, UI
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ResultTableViewCell") as! ResultTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MatchOfClubTableViewCell") as! MatchOfClubTableViewCell
         
         let resultSectionArray = resultModelArray[indexPath.section]
         
