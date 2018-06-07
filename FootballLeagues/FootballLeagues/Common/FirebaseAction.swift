@@ -32,14 +32,14 @@ class FirebaseAction: NSObject {
     //MARK: - USERS
     
     func updateNickName() {
-        var motherName = "Ẩn danh"
-        if UserDefaults.standard.object(forKey: "motherName") != nil {
-            motherName = UserDefaults.standard.object(forKey: "motherName") as! String
+        var nickName = "Ẩn danh"
+        if UserDefaults.standard.object(forKey: "nickName") != nil {
+            nickName = UserDefaults.standard.object(forKey: "nickName") as! String
         }
         var resultRef: DatabaseReference = Database.database().reference()
         resultRef = ref.child("users")
         //comform to waiting share property
-    resultRef.child((UIDevice.current.identifierForVendor?.uuidString)!).setValue(motherName)
+    resultRef.child((UIDevice.current.identifierForVendor?.uuidString)!).child("nickName").setValue(nickName)
     }
     
     func getUser(max: NSInteger, onCompletionHandler: @escaping ([String : String]) -> ()) {
