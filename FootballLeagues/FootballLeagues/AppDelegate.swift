@@ -21,10 +21,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
 
         firebaseObject.initFirebase()
-        
-        let homeViewController = main_storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-        self.window?.rootViewController = homeViewController
         UIApplication.shared.statusBarStyle = .lightContent
+
+        let nickName = UserDefaults.standard.object(forKey: "nickName")
+        if nickName == nil {
+            let setupInfoViewController = main_storyboard.instantiateViewController(withIdentifier: "SetNickNameViewController") as! SetNickNameViewController
+            let nav = UINavigationController.init(rootViewController: setupInfoViewController)
+            self.window?.rootViewController = nav
+        } else {
+            let homeViewController = main_storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+            self.window?.rootViewController = homeViewController
+        }
+
+        
         self.window?.makeKeyAndVisible()
         return true
     }

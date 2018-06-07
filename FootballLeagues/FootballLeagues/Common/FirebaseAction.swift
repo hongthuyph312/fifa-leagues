@@ -31,6 +31,13 @@ class FirebaseAction: NSObject {
     
     //MARK: - USERS
     
+    func initUser(nickName: String, onCompletionHandler: @escaping () -> ()) {
+        let serverTimestamp = ServerValue.timestamp()
+
+        ref.child("users").child(kUUID).setValue(["nickName": nickName, "point": 0, "id": kUUID, "lastComment": serverTimestamp])
+        onCompletionHandler()
+    }
+    
     func updateNickName() {
         var nickName = "Ẩn danh"
         if UserDefaults.standard.object(forKey: "nickName") != nil {
@@ -50,17 +57,13 @@ class FirebaseAction: NSObject {
         })
     }
     
-    func addPoint(point: Int) {
-        var nickName = "Ẩn danh"
-        if UserDefaults.standard.object(forKey: "nickName") != nil {
-            nickName = UserDefaults.standard.object(forKey: "nickName") as! String
-        }
-        var resultRef: DatabaseReference = Database.database().reference()
+    func addPoint(point: Int, onCompletionHandler: @escaping (Int) -> ()) {
         ref.child("users").child(kUUID).child("point").observeSingleEvent(of: .value, with: { (snapshot) in
-            if let currentPoint = snapshot.value {
-                return
+            let currentPoint = snapshot.value
+            if currentPoint != nil {
+                self.ref.child(kUUID).child("point").setValue(currentPoint as! Int + point)
+                onCompletionHandler(currentPoint as! Int + point)
             }
-            resultRef.child(kUUID).child("point").setValue(currentPoint + point)
         })
     }
     

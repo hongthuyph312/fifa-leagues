@@ -257,6 +257,61 @@
             </objects>
             <point key="canvasLocation" x="826.875" y="117.25352112676056"/>
         </scene>
+        <!--Set Nick Name View Controller-->
+        <scene sceneID="yZa-zw-fdG">
+            <objects>
+                <viewController storyboardIdentifier="SetNickNameViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="P2H-QX-10p" customClass="SetNickNameViewController" customModule="FootballLeagues" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="f7l-zj-koC"/>
+                        <viewControllerLayoutGuide type="bottom" id="Yvi-bJ-RUJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zeU-oE-5mg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4vy-Sp-RMh">
+                                <rect key="frame" x="30" y="60" width="260" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="WMK-ea-xHd"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="P2H-QX-10p" id="0L5-rn-tzB"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9R-69-r9R">
+                                <rect key="frame" x="100" y="125" width="120" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Q8Q-sP-Gjh"/>
+                                    <constraint firstAttribute="width" constant="120" id="YfB-eE-4CB"/>
+                                </constraints>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="0.1960784314" green="0.64705882349999999" blue="0.437529999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedSetNickName:" destination="P2H-QX-10p" eventType="touchUpInside" id="ihM-AN-Ues"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4vy-Sp-RMh" firstAttribute="leading" secondItem="zeU-oE-5mg" secondAttribute="leading" constant="30" id="H0v-0T-YV2"/>
+                            <constraint firstItem="N9R-69-r9R" firstAttribute="top" secondItem="4vy-Sp-RMh" secondAttribute="bottom" constant="25" id="UWT-NQ-xUL"/>
+                            <constraint firstItem="N9R-69-r9R" firstAttribute="centerX" secondItem="zeU-oE-5mg" secondAttribute="centerX" id="WGf-JF-sBV"/>
+                            <constraint firstAttribute="trailing" secondItem="4vy-Sp-RMh" secondAttribute="trailing" constant="30" id="fmg-Dt-Dxi"/>
+                            <constraint firstItem="4vy-Sp-RMh" firstAttribute="top" secondItem="f7l-zj-koC" secondAttribute="bottom" constant="40" id="iLs-ck-1yu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nickNameTextField" destination="4vy-Sp-RMh" id="pvw-Wi-mQK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="869-QN-Is9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1923" y="118"/>
+        </scene>
         <!--Home View Controller-->
         <scene sceneID="NgO-ZH-Eem">
             <objects>
@@ -843,7 +898,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k7W-nc-V25" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1246.875" y="784.85915492957747"/>
+            <point key="canvasLocation" x="-1223" y="825"/>
         </scene>
         <!--Club Profile View Controller-->
         <scene sceneID="6qt-Mc-qle">

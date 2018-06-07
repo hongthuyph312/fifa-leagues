@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		6242DFBB6F6596DE4EE96E6E /* Pods_FootballLeagues.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF87FF5CC445AA72F9A085A5 /* Pods_FootballLeagues.framework */; };
 		731AA825EFE446A6C5F018F6 /* Pods_FootballLeaguesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BD98BC864E8D1DD14C0BC13 /* Pods_FootballLeaguesUITests.framework */; };
+		D2291A0020C9903700F0888C /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22919FF20C9903700F0888C /* UserModel.swift */; };
+		D2291A0220C9A18200F0888C /* SetNickNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2291A0120C9A18200F0888C /* SetNickNameViewController.swift */; };
+		D2291A0420C9A2D300F0888C /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2291A0320C9A2D300F0888C /* Toast.swift */; };
 		D2820B3320C6E1B30073AADD /* MatchDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2820B3220C6E1B30073AADD /* MatchDetailTableViewCell.swift */; };
 		D2820B3520C6E74B0073AADD /* RealTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2820B3420C6E74B0073AADD /* RealTimeModel.swift */; };
 		D28E95B420C83C8E00FF5B57 /* MatchOfTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E95B320C83C8E00FF5B57 /* MatchOfTableViewCell.swift */; };
@@ -87,6 +90,9 @@
 		7C328B1DD94BDAD005239B9C /* Pods-FootballLeaguesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FootballLeaguesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FootballLeaguesUITests/Pods-FootballLeaguesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8622522649E9C55CA9B89BEF /* Pods_FootballLeaguesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FootballLeaguesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAE5EC63760709C5356949E5 /* Pods-FootballLeagues.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FootballLeagues.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FootballLeagues/Pods-FootballLeagues.debug.xcconfig"; sourceTree = "<group>"; };
+		D22919FF20C9903700F0888C /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		D2291A0120C9A18200F0888C /* SetNickNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNickNameViewController.swift; sourceTree = "<group>"; };
+		D2291A0320C9A2D300F0888C /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		D2820B3220C6E1B30073AADD /* MatchDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailTableViewCell.swift; sourceTree = "<group>"; };
 		D2820B3420C6E74B0073AADD /* RealTimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTimeModel.swift; sourceTree = "<group>"; };
 		D28E95B320C83C8E00FF5B57 /* MatchOfTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchOfTableViewCell.swift; sourceTree = "<group>"; };
@@ -253,6 +259,7 @@
 			children = (
 				D2F31AC520C1C38500E88D95 /* FirebaseAction.swift */,
 				D2F31AC320C1C37B00E88D95 /* Common.swift */,
+				D2291A0320C9A2D300F0888C /* Toast.swift */,
 				D2A1506F20BDB434006AE6B0 /* Define.swift */,
 				D2A1506920BDB434006AE6B0 /* Extension */,
 			);
@@ -280,6 +287,7 @@
 				D2F99BF820C2F5A00067FCE7 /* ResultModel.swift */,
 				EAB13E7320C54E1F00DD5863 /* PlayerModel.swift */,
 				D2820B3420C6E74B0073AADD /* RealTimeModel.swift */,
+				D22919FF20C9903700F0888C /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -371,6 +379,7 @@
 			children = (
 				EAB13E7020C54CAE00DD5863 /* ClubProfileViewController.swift */,
 				EAFA321520C64A8D0045CFAF /* ClubProfileTableViewCell.swift */,
+				D2291A0120C9A18200F0888C /* SetNickNameViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -708,6 +717,7 @@
 				EAFA321920C699B30045CFAF /* MatchDetailViewController.swift in Sources */,
 				EAB13E7120C54CAE00DD5863 /* ClubProfileViewController.swift in Sources */,
 				D2A1507220BDB434006AE6B0 /* StringExtension.swift in Sources */,
+				D2291A0220C9A18200F0888C /* SetNickNameViewController.swift in Sources */,
 				D2A1507020BDB434006AE6B0 /* Mdate.swift in Sources */,
 				D2F31AC420C1C37B00E88D95 /* Common.swift in Sources */,
 				D2A1507820BDB8C0006AE6B0 /* ClubModel.swift in Sources */,
@@ -715,8 +725,10 @@
 				D2820B3320C6E1B30073AADD /* MatchDetailTableViewCell.swift in Sources */,
 				D28E95B620C83CD400FF5B57 /* MatchOfClubTableViewCell.swift in Sources */,
 				D2F31AC620C1C38600E88D95 /* FirebaseAction.swift in Sources */,
+				D2291A0420C9A2D300F0888C /* Toast.swift in Sources */,
 				D2F31AC820C1C5B700E88D95 /* OriginalViewController.swift in Sources */,
 				D28E95B420C83C8E00FF5B57 /* MatchOfTableViewCell.swift in Sources */,
+				D2291A0020C9903700F0888C /* UserModel.swift in Sources */,
 				EAFA321620C64A8D0045CFAF /* ClubProfileTableViewCell.swift in Sources */,
 				D2A1507320BDB434006AE6B0 /* UILabelExtension.swift in Sources */,
 				EAB13E6B20C5293900DD5863 /* MatchOfTableViewController.swift in Sources */,

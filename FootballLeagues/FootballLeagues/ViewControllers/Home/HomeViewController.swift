@@ -25,6 +25,10 @@ class HomeViewController: OriginalViewController, GADBannerViewDelegate, GADInte
         self.initAdsView()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
