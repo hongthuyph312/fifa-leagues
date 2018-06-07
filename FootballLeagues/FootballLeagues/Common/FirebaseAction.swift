@@ -50,6 +50,20 @@ class FirebaseAction: NSObject {
         })
     }
     
+    func addPoint(point: Int) {
+        var nickName = "Ẩn danh"
+        if UserDefaults.standard.object(forKey: "nickName") != nil {
+            nickName = UserDefaults.standard.object(forKey: "nickName") as! String
+        }
+        var resultRef: DatabaseReference = Database.database().reference()
+        ref.child("users").child(kUUID).child("point").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let currentPoint = snapshot.value {
+                return
+            }
+            resultRef.child(kUUID).child("point").setValue(currentPoint + point)
+        })
+    }
+    
     //MARK: - THREADS
     
     func createNewThread(title: String, content: String, onCompletionHandler: @escaping () -> ()) {
