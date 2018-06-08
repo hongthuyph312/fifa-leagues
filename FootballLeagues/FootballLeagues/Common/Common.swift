@@ -220,7 +220,7 @@ class Common: NSObject {
         let team1 = app_delegate.clubArray.filter{$0.id == match.team1Id}.first
         let team2 = app_delegate.clubArray.filter{$0.id == match.team2Id}.first
         
-        let message = "Match between \(team1?.name) and \(team2?.name) at \(Common.stringFromTimeInterval(timeInterval: match.time, format: "dd-MM-yyyy"))"
+        let message = "Match between \(String(describing: team1?.name)) and \(String(describing: team2?.name)) at \(Common.stringFromTimeInterval(timeInterval: match.time, format: "dd-MM-yyyy"))"
         let notification = UILocalNotification()
         notification.fireDate = Date.init(timeIntervalSince1970: match.time)
         notification.alertBody = message
