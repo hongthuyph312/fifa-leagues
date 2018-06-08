@@ -66,7 +66,7 @@ class Common: NSObject {
         dateFormatter.locale = NSLocale.system
         let date = dateFormatter.date(from:date)!
         let calendar = Calendar.current
-        let components = calendar.dateComponents([.year, .month, .day, .hour], from: date)
+        let components = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: date)
         let finalDate = calendar.date(from:components)
         
         // Return to timeInterval
@@ -96,52 +96,6 @@ class Common: NSObject {
         let date = Date(timeIntervalSince1970: timeInterval)
         
         return formatter.string(from: date)
-    }
-    
-    //Convert to birth date
-    static func birthDateFromBabyWeek(days: Int) -> Date{
-        let currentTimeStamp = Date().endOfDay().timeIntervalSince1970
-        let birthDate = currentTimeStamp + Double(280 - days) * 86400.0
-        
-        return Date.init(timeIntervalSince1970: birthDate)
-    }
-    
-    static func birthDateFromLastDate(date: Date) -> Date{
-        let beginTimeStamp = date.timeIntervalSince1970
-        let birthDate = beginTimeStamp + 280.0 * 86400.0
-        
-        return Date.init(timeIntervalSince1970: birthDate)
-    }
-    
-    //Convert to baby week
-    static func babyWeekFromLastDate(date: Date) -> Int{
-        let beginTimeStamp = date.timeIntervalSince1970
-        let currentTimeStamp = Date().endOfDay().timeIntervalSince1970
-
-        return Int((currentTimeStamp - beginTimeStamp)/86400.0) + 2
-    }
-    
-    static func babyWeekFrombirthDate(date: Date) -> Int{
-        let birthDateTimeStamp = Int(date.timeIntervalSince1970/86400.0) * 86400
-        let currentTimeStamp = Int(Date().endOfDay().timeIntervalSince1970/86400.0) * 86400
-        
-        return 280 - Int(Double(birthDateTimeStamp - currentTimeStamp)/86400.0)
-    }
-    
-    //Convert to last day
-    static func lastDateFromBabyWeek(days: Int) -> Date{
-        let currentTimeStamp = Date().endOfDay().timeIntervalSince1970
-        let lastDate = currentTimeStamp - Double(days) * 86400.0
-        
-        return Date.init(timeIntervalSince1970: lastDate)
-    }
-    
-    static func lastDateFromBirthDate(date: Date) -> Date{
-        let birthDateTimeStamp = date.timeIntervalSince1970
-        
-        let lastDate = birthDateTimeStamp - 280.0 * 86400.0
-        
-        return Date.init(timeIntervalSince1970: lastDate)
     }
     
     // MARK: - Appstore
@@ -259,5 +213,20 @@ class Common: NSObject {
             return vc
         }
         return UIViewController()
+    }
+    
+    // MARK: - Local notification
+    static func createNotification(match: ResultModel, isRepeat: Bool) -> UILocalNotification? {
+        let team1 = app_delegate.clubArray.filter{$0.id == match.team1Id}.first
+        let team2 = app_delegate.clubArray.filter{$0.id == match.team2Id}.first
+        
+        let message = "Match between \(team1?.name) and \(team2?.name) at \(Common.stringFromTimeInterval(timeInterval: match.time, format: "dd-MM-yyyy"))"
+        let notification = UILocalNotification()
+        notification.fireDate = Date.init(timeIntervalSince1970: match.time)
+        notification.alertBody = message
+        notification.category = "schedule of match"
+        notification.userInfo = ["matchId": match.time, "auto_created": isRepeat] as [String:Any]
+        notification.soundName = UILocalNotificationDefaultSoundName
+        return notification
     }
 }

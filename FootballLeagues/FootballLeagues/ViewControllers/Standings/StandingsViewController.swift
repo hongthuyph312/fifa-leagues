@@ -47,6 +47,12 @@ class StandingsViewController: OriginalViewController, UITableViewDelegate, UITa
             app_delegate.allMatchArray = array
             app_delegate.firebaseObject.getClubList(onCompletionHandler: {array in
                 app_delegate.clubArray = array
+                
+                // Add schedule for notification
+                for match in app_delegate.allMatchArray {
+                    let notification = Common.createNotification(match: match, isRepeat: true)
+                    UIApplication.shared.scheduleLocalNotification(notification!)
+                }
                 self.tableView.reloadData()
                 self.hideActivityIndicator()
             })
