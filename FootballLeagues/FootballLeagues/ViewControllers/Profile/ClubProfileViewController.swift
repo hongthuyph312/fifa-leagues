@@ -39,11 +39,11 @@ class ClubProfileViewController: OriginalViewController, UITableViewDataSource, 
     }
     
     func setupData() {
-        rankLabel.text      = "\(rank + 1)"
+        rankLabel.text      = "Rank: \(rank + 1)"
         clubNameLabel.text  = clubModel.name
-        pointLabel.text     = "\(clubModel.point)"
-        gdLabel.text        = "\(clubModel.goals)-\(clubModel.lost)"
-        playedLabel.text    = "\(clubModel.played)"
+        pointLabel.text     = "Point: \(clubModel.point)"
+        gdLabel.text        = "Goals: \(clubModel.goals)-\(clubModel.lost)"
+        playedLabel.text    = "Played: \(clubModel.played)"
         flagImageView.image = UIImage.init(named: clubModel.flag)
     }
     
