@@ -14,7 +14,6 @@ class ClubProfileViewController: OriginalViewController, UITableViewDataSource, 
     @IBOutlet weak var pointLabel: UILabel!
     @IBOutlet weak var rankLabel: UILabel!
     @IBOutlet weak var gdLabel: UILabel!
-    @IBOutlet weak var clubNameLabel: UILabel!
     @IBOutlet weak var flagImageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     var clubModel               = ClubModel()
@@ -40,7 +39,6 @@ class ClubProfileViewController: OriginalViewController, UITableViewDataSource, 
     
     func setupData() {
         rankLabel.text      = "Rank: \(rank + 1)"
-        clubNameLabel.text  = clubModel.name
         pointLabel.text     = "Point: \(clubModel.point)"
         gdLabel.text        = "Goals: \(clubModel.goals)-\(clubModel.lost)"
         playedLabel.text    = "Played: \(clubModel.played)"
