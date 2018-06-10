@@ -222,7 +222,7 @@ class Common: NSObject {
         
         let message = "Match between \(String(describing: team1?.name)) and \(String(describing: team2?.name)) at \(Common.stringFromTimeInterval(timeInterval: match.time, format: "dd-MM-yyyy"))"
         let notification = UILocalNotification()
-        notification.fireDate = Date.init(timeIntervalSinceNow: 10) //Date.init(timeIntervalSince1970: match.time)
+        notification.fireDate = Date.init(timeIntervalSince1970: match.time)
         notification.alertBody = message
         notification.category = "schedule of match"
         notification.userInfo = ["matchId": match.time, "auto_created": isRepeat] as [String:Any]

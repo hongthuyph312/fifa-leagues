@@ -48,13 +48,10 @@ class StandingsViewController: OriginalViewController, UITableViewDelegate, UITa
             app_delegate.firebaseObject.getClubList(onCompletionHandler: {array in
                 app_delegate.clubArray = array
                 
-                UIApplication.shared.cancelAllLocalNotifications()
-                let notificationSettings = UIUserNotificationSettings.init(types: [.alert, .badge, .sound], categories: nil)
-                UIApplication.shared.registerUserNotificationSettings(notificationSettings)
-                
+                UIApplication.shared.cancelAllLocalNotifications()                
                 // Add schedule for notification
                 for match in app_delegate.allMatchArray {
-                    let notification = Common.createNotification(match: match, isRepeat: true)
+                    let notification = Common.createNotification(match: match, isRepeat: false)
                     UIApplication.shared.scheduleLocalNotification(notification!)
                 }
                 self.tableView.reloadData()
